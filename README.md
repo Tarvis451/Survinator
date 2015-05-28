@@ -7,6 +7,6 @@ Project Manager: Travis Bangs
 
 Database Guy: Colby
 
-Website Guy: Andrew
+Website Guy: Samuel
 
-App Guy: Samuel
+App Guy: Andrew
