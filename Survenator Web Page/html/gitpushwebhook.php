@@ -14,7 +14,7 @@ $REPO = "https://github.com/Tarvis451/Survinator.git";
 //if ( isset($_POST['payload']) )
 //{
 	//Pull from repo
-	shell_exec("cd /var/www/gitpull && git pull");
+	shell_exec("cd {$REPO_PULL_LOC} && git pull");
 	
 	//Copy web folder contents to actual web folder on server
 	shell_exec("cd {$REPO_PULL_LOC}/{$WEB_FOLDER_NAME} && cp -r * {$COPY_LOC}");
