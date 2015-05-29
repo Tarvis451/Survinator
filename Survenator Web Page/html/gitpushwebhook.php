@@ -11,8 +11,8 @@ $WEB_FOLDER_NAME = "Survenator\ Web\ Page";
 $COPY_LOC = "/var/www";
 $REPO = "https://github.com/Tarvis451/Survinator.git";
 
-//if ( isset($_POST['payload']) )
-//{
+if ( isset($_POST['payload']) )
+{
 	//Pull from repo
 	shell_exec("cd {$REPO_PULL_LOC} && git pull");
 	
@@ -20,8 +20,8 @@ $REPO = "https://github.com/Tarvis451/Survinator.git";
 	shell_exec("cd {$REPO_PULL_LOC}/{$WEB_FOLDER_NAME} && cp -r * {$COPY_LOC}");
 
 	exit("Recieved payload and updated server");
-//}
-//else
-//	exit("Rejected; no payload");
+}
+else
+	exit("Rejected; no payload");
 
 ?>
