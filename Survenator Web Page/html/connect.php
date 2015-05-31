@@ -20,9 +20,14 @@ $result = mysql_query("SELECT * FROM Users");
 
 //fetch tha data from the database 
 while ($row = mysql_fetch_array($result)) {
-   echo "UserID:".$row{'UserID'}." UserName:".$row{'UserName'}." HashPassword: ". //display the results
+   echo "UserID:".$row{'UserID'}."<br>UserName:".$row{'UserName'}."<br>HashPassword: ". //display the results
    $row{'HashPassword'}."<br>";
 }
+
+//check if user already exists
+
+//make new user
+
 //close the connection
 mysql_close($dbhandle);
 ?>
