@@ -1,13 +1,17 @@
 <?php
-$username = "root";
-$password = "datapass";
+$sqlname = "root";
+$sqlpass = "datapass";
 //should be localhost?
 //$hostname = "travis-webserver.dyndns.org"; 
 $hostname = "localhost"; 
 
+//input from registration form
+$user = $_POST['Username'];
+$pass = $_POST['Password'];
+
 
 //connection to the database
-$dbhandle = mysql_connect($hostname, $username, $password) 
+$dbhandle = mysql_connect($hostname, $sqlname, $sqlpass) 
  or die("Unable to connect to MySQL");
 echo "Connected to MySQL<br>";
 
@@ -25,6 +29,10 @@ while ($row = mysql_fetch_array($result)) {
 }
 
 //check if user already exists
+$sqlquery = mysqli_real_escape_string($dbhandle, SELECT Username FROM Users where Username='{$user}'");
+$result = mysql_query($sqlquery);
+echo $result;
+
 
 //make new user
 
