@@ -33,10 +33,12 @@ $sqlquery = "SELECT Username FROM Users where Username='{$user}'";
 echo($sqlquery);
 $result = mysql_query($sqlquery);
 
-if(mysql_num_rows($result) == 0)
+if(mysql_num_rows($result) != 0)
 {
-  echo("User not found");
+    echo("Found username!");
+    die("User already exists!");
 }
+
 
 
 //make new user
