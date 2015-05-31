@@ -6,8 +6,8 @@ $sqlpass = "datapass";
 $hostname = "localhost"; 
 
 //input from registration form
-$user = $_POST['Username'];
-$pass = $_POST['Password'];
+$user = $_POST['username'];
+$pass = $_POST['password'];
 
 
 //connection to the database
