@@ -29,7 +29,7 @@ while ($row = mysql_fetch_array($result)) {
 }
 
 //check if user already exists
-$sqlquery = mysqli_real_escape_string($dbhandle, "SELECT Username FROM Users where Username='{$user}'");
+$sqlquery = "SELECT Username FROM Users where Username='{$user}'";
 echo($sqlquery);
 $result = mysql_query($sqlquery);
 
