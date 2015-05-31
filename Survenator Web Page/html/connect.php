@@ -29,15 +29,13 @@ while ($row = mysql_fetch_array($result)) {
 }
 
 //check if user already exists
+//FIXME - protect query from injection!!
 $sqlquery = "SELECT Username FROM Users where Username='{$user}'";
-echo($sqlquery);
 $result = mysql_query($sqlquery);
 
 if(mysql_num_rows($result) != 0)
-{
-    echo("Found username!");
     die("User already exists!");
-}
+
 
 
 
