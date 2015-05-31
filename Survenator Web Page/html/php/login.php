@@ -3,5 +3,5 @@
     $user = $_POST['Username'];
     $pass = $_POST['Password'];
 
-    redirect_to("MainOptions.html");
+    header(location:$"MainOptions.html");
 ?>
