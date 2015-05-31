@@ -1,6 +1,6 @@
 <?php
 $username = "root";
-$password = "daapass";
+$password = "datapass";
 //should be localhost?
 //$hostname = "travis-webserver.dyndns.org"; 
 $hostname = "localhost"; 
