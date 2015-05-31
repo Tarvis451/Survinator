@@ -31,7 +31,11 @@ while ($row = mysql_fetch_array($result)) {
 //check if user already exists
 $sqlquery = mysqli_real_escape_string($dbhandle, "SELECT Username FROM Users where Username='{$user}'");
 $result = mysql_query($sqlquery);
-echo $result;
+
+if(mysql_num_rows($result) == 0)
+{
+  echo("User not found");
+}
 
 
 //make new user
