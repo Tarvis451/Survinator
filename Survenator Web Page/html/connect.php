@@ -1,7 +1,10 @@
 <?php
 username = "Samuel";
 $password = "P@ssW0rd";
-$hostname = "travis-webserver.dyndns.org"; 
+//should be localhost?
+//$hostname = "travis-webserver.dyndns.org"; 
+$hostname = "localhost"; 
+
 
 //connection to the database
 $dbhandle = mysql_connect($hostname, $username, $password) 
