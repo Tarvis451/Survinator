@@ -36,7 +36,11 @@ $result = mysql_query($sqlquery);
 if(mysql_num_rows($result) != 0)
     die("User already exists!");
 
-
+else {
+  $sqlquery = "INSERT INTO Users(Username, HashPassword) VALUES ('{$user}', '{$pass}')";
+  $result = mysql_query($sqlquery);
+  echo($result);
+}
 
 
 //make new user
