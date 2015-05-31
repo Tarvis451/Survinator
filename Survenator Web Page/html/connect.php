@@ -20,7 +20,7 @@ $result = mysql_query("SELECT * FROM Users");
 
 //fetch tha data from the database 
 while ($row = mysql_fetch_array($result)) {
-   echo "UserID:".$row{'UserID'}." UserName:".$row{'UserName'}."HashPassword: ". //display the results
+   echo "UserID:".$row{'UserID'}." UserName:".$row{'UserName'}." HashPassword: ". //display the results
    $row{'HashPassword'}."<br>";
 }
 //close the connection
