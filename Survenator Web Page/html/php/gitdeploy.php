@@ -17,7 +17,7 @@ if ( isset($_POST['payload']) )
 	shell_exec("cd {$REPO_PULL_LOC} && git pull");
 	
 	//Copy web folder contents to actual web folder on server
-	shell_exec("cd {$REPO_PULL_LOC}/{$WEB_FOLDER_NAME} && cp -r * {$COPY_LOC}");
+	shell_exec("cd {$REPO_PULL_LOC}/{$WEB_FOLDER_NAME} && rsync -r --delete . {$COPY_LOC});
 
 	exit("Recieved payload and updated server");
 }
