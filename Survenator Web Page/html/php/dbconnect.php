@@ -15,7 +15,7 @@ function db_connect()
     return $dbhandle;
 }
 
-function dbclose($dbhandle)
+function db_close($dbhandle)
 {
     mysql_close($dbhandle);
 }
