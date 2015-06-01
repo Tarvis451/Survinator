@@ -7,7 +7,17 @@ $dbhandle = db_connect();
 $user = mysql_real_escape_string($_POST['username']);
 $pass = mysql_real_escape_string($_POST['password']);
 	
-//TODO - prevent invalid usernames (e.g. empty strings)
+//validate username & password
+//Current restrictions:
+//username: no less than 3 chars
+//password: no less than 3 chars
+if ((strlen($user) < 3) || (strlen($pass) < 3))
+{
+	db_close($dbhandle);
+	die("Username and password must be at least 3 characters long!<br>");
+}
+
+//validate password
 
 //check if user already exists
 $sqlquery = "SELECT Username FROM Users where Username='{$user}'";
