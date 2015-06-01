@@ -38,7 +38,7 @@ $result = mysql_query($sqlquery);
 if(mysql_num_rows($result) != 0)
 {
 	mysql_close($dbhandle);
-    die("User already exists!");
+	die("User already exists!");
 }
 
 //make new user
