@@ -7,8 +7,8 @@ This causes the server to pull from the repo and update the website.
 **/
 
 $REPO_PULL_LOC = "/var/www/gitpull";
-$WEB_FOLDER_NAME = "Survenator\ Web\ Page";
-$COPY_LOC = "/var/www";
+$WEB_FOLDER_NAME = "Survenator\ Web\ Page/html";
+$COPY_LOC = "/var/www/html";
 $REPO = "https://github.com/Tarvis451/Survinator.git";
 
 if ( isset($_POST['payload']) )
