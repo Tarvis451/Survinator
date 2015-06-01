@@ -18,7 +18,7 @@ if ((strlen($user) < 3) || (strlen($pass) < 3))
 }
 
 //check if user already exists
-$sqlquery = "SELECT Username FROM Users where Username='{$user}'";
+$sqlquery = "SELECT UserName FROM Users where UserName='{$user}'";
 $result = mysql_query($sqlquery);
 
 //fail if user already exists
