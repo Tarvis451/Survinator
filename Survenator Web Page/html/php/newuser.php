@@ -30,7 +30,7 @@ if(mysql_num_rows($result) != 0)
 	mysql_close($dbhandle);
 	echo "<script language=\"JavaScript\">\n";
 	echo "alert('Username already taken!');\n";
-	echo "window.location='/UserRegistration.html'";
+	//echo "window.location='/UserRegistration.html'";
 	echo "</script>";
 	die("User already exists!");
 }

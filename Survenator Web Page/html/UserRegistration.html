@@ -49,17 +49,15 @@ This div is meant to display final form.
 <div>
     <h2></h2>
     <br>
-    
-    <!--First button never works for whatever reason-->
-     <form>
-        <input hidden="hidden" type="submit" value="" >
-     </form>    
 
-      <form action="php/newuser.php" method="post">
-          Username: <input type="text" name="username" value="">
-          Password: <input type="password" name="password" value="">
-          <input type="submit" value="Register">
-      </form>
+	<iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>
+	
+    <form action="php/newuser.php" method="post" target="dummyframe">
+        Username: <input type="text" name="username" value="">
+        Password: <input type="password" name="password" value="">
+        <input type="submit" value="Register">
+    </form>
+	
 </div>
 
 
