@@ -30,7 +30,7 @@ if(mysql_num_rows($result) != 0)
 	mysql_close($dbhandle);
 	echo "<script language=\"JavaScript\">\n";
 	echo "alert('Username already taken!');\n";
-	//echo "window.location='/UserRegistration.html'";
+	echo "window.location='/UserRegistration.html'";
 	echo "</script>";
 	die("User already exists!");
 }
@@ -42,7 +42,7 @@ $result = mysql_query($sqlquery);
 
 //redirect to registration success page
 mysql_close($dbhandle);
-header("location:../UserRegistrationSuccess.html");
+header("location: /UserRegistrationSuccess.html");
 die("You are registered!");
 
 ?>
