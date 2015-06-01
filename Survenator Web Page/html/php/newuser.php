@@ -30,7 +30,7 @@ if(mysql_num_rows($result) != 0)
 
 //make new user
 //TODO - get hashed password instead of plaintext
-$sqlquery = "INSERT INTO Users(Username, HashPassword) VALUES ('{$user}', '{$pass}')";
+$sqlquery = "INSERT INTO Users(UserName, HashPassword) VALUES ('{$user}', '{$pass}')";
 $result = mysql_query($sqlquery);
 
 //redirect to registration success page
