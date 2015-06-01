@@ -1,33 +1,22 @@
 <?php
 
-$sqlname = "root";
-$sqlpass = "datapass";
-$hostname = "localhost"; 
+require 'dbconnect.php';
+$dbhandle = db_connect();
 
 //input from registration form
-$user = $_POST['username'];
-$pass = $_POST['password'];
-
-//connection to the database
-$dbhandle = mysql_connect($hostname, $sqlname, $sqlpass) 
-	or die("Unable to connect to MySQL");
-echo "Connected to MySQL<br>";
-
-//select a database to work with
-$selected = mysql_select_db("Survinator",$dbhandle) 
-	or die("Could not select Survinator");
+$user = mysql_real_escape_string($_POST['username']);
+$pass = mysql_real_escape_string($_POST['password']);
 	
 //TODO - prevent invalid usernames (e.g. empty strings)
 
 //check if user already exists
-//FIXME - protect query from injection!!
 $sqlquery = "SELECT Username FROM Users where Username='{$user}'";
 $result = mysql_query($sqlquery);
 
 //fail if user already exists
 if(mysql_num_rows($result) != 0)
 {
-	mysql_close($dbhandle);
+	db_close($dbhandle);
 	die("User already exists!");
 }
 
@@ -37,7 +26,7 @@ $sqlquery = "INSERT INTO Users(Username, HashPassword) VALUES ('{$user}', '{$pas
 $result = mysql_query($sqlquery);
 
 //redirect to registration success page
-mysql_close($dbhandle);
+db_close($dbhandle);
 header("location: /UserRegistrationSuccess.html");
 die("You are registered!");
 
