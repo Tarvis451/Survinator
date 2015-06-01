@@ -2,7 +2,7 @@
 
 //Connect to the database
 //Returns handle
-string function db_connect()
+function db_connect()
 {
     $sqlname = "root";
     $sqlpass = "datapass";
@@ -13,6 +13,11 @@ string function db_connect()
     mysql_select_db("Survinator", $dbhandle);
     
     return $dbhandle;
+}
+
+function dbclose($dbhandle)
+{
+    mysql_close($dbhandle);
 }
 
 ?>
