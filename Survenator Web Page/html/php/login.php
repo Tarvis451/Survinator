@@ -7,7 +7,7 @@
     $pass = mysql_real_escape_string($_POST['password']);
     
     //query user
-    $sqlquery = "SELECT Username FROM Users where Username='{$user}'";
+    $sqlquery = "SELECT UserName FROM Users where UserName='{$user}'";
     $result = mysql_query($sqlquery);
     
     //fail if user already exists
@@ -19,7 +19,7 @@
     
     //query password
     //TODO - use hashed password instead of plaintext
-    $sqlquery = "SELECT UserID FROM Users WHERE Username='{$user}' AND HashPassword='{$pass}' LIMIT 1";
+    $sqlquery = "SELECT UserID FROM Users WHERE UserName='{$user}' AND HashPassword='{$pass}' LIMIT 1";
     $result = mysql_query($sqlquery);
     
     //fail if wrong password
