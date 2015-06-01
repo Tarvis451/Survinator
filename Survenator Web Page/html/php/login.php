@@ -1,7 +1,7 @@
 <?php
 
-    $user = $_POST['Username'];
-    $pass = $_POST['Password'];
+    $user = $_POST['username'];
+    $pass = $_POST['password'];
 
     header("location: /MainOptions.html");
 ?>
