@@ -40,5 +40,6 @@
     
     //redirect to main page
     header("Location: /MainOptions.html");
+    die("Logged in<br>");
     
 ?>
