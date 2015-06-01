@@ -17,8 +17,6 @@ if ((strlen($user) < 3) || (strlen($pass) < 3))
 	die("Username and password must be at least 3 characters long!<br>");
 }
 
-//validate password
-
 //check if user already exists
 $sqlquery = "SELECT Username FROM Users where Username='{$user}'";
 $result = mysql_query($sqlquery);
