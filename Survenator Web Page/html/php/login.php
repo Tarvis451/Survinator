@@ -30,20 +30,20 @@
 	    die("Incorrect password<br>");
     }
     
-    $row = mysqli_fetch_array($result);
+    $row = mysql_fetch_array($result);
 
     //Grab the UserID for the redirect link
-    $UserID = mysql_result($result);
+    $userid = $row['UserID'];
 
     //create login session
     session_start();
-    $_SESSION["userid"] = $row['UserID'];
+    $_SESSION["userid"] = $userid;
     $_SESSION["user"] = $user;
     
     db_close($dbhandle);
 
     //redirect to main page, embedded UserID into redirect link
-    $url = "/MainOptions.html?UserID={$row['UserID']}";
+    $url = "/MainOptions.html?UserID={$userid}";
     header("Location: ".$url);
     die("Logged in<br>");
     
