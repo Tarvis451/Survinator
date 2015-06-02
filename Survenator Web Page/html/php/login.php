@@ -19,7 +19,7 @@
     
     //query password
     //TODO - use hashed password instead of plaintext
-    $sqlquery = "SELECT UserID FROM Users WHERE UserName='{$user}' AND HashPassword='{$pass}' LIMIT 1";
+    $sqlquery = "SELECT UserID FROM Users WHERE UserName='{$user}' AND HashPassword='{$pass}'";
     $result = mysql_query($sqlquery); // This is guaranteed to return ONLY the UserID. That is, if a user logs in successfully,
     					// The entire result set will be {<value of UserID>} (assuming they are a valid user).
     
