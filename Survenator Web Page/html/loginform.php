@@ -1,7 +1,7 @@
+<?php
+
 //Dynamic form for login, included in html
 //Actual login info is a separate script
-
-<?php
 
 require 'php/login.php';
 
@@ -41,5 +41,3 @@ if(isset($_POST['submit']))
       Password: <input type="password" name="password" value="">
       <input type="submit" value="Log In">
 </form>
-
-?>
