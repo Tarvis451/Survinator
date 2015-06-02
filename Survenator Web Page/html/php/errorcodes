@@ -1,4 +1,6 @@
-91 login user does not exist
-92 login bad password
-81 reg user/pass too short
-82 reg user exists
+-101 survey name invalid
+-102 survey name already exists
+-91 login user does not exist
+-92 login bad password
+-81 reg user/pass too short
+-82 reg user exists
