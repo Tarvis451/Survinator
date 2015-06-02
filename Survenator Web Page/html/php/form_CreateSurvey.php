@@ -25,9 +25,8 @@
 		
 		$fieldname = $name;
 		$fielddesc = $desc;
-		
+		echo $fieldname;
 		$ret = addSurvey($name,$desc);
-		echo $ret;
 		
 		if ($ret == -101)
 			$error = "Survey title must have 3 or more characters";
@@ -38,7 +37,7 @@
 		if ($ret >= 0)
 		{
 			$surveyid = $ret;
-			header("Location: /addQuestions?id={$surveyid}");
+			header("Location: /addQuestions.html?id={$surveyid}");
 			die("Successfully created survey with id {$surveyid}");
 		}
 	}
