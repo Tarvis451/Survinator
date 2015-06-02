@@ -40,7 +40,8 @@
     $_SESSION["userid"] = $row['UserID'];
     $_SESSION["user"] = $user;
     
-    $string = {$UserID};
+    $string = strval($UserID);
+    echo "This should say 6=======>";
     echo $string;
 /*
     db_close($dbhandle);
