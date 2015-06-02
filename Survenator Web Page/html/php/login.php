@@ -34,7 +34,8 @@
 
     //Grab the UserID for the redirect link
     $UserIDquery = "SELECT UserID FROM Users WHERE UserName='{$user}'";
-    $UserID = mysql_query($UserIDquery);
+    $UserIDresult = mysql_query($UserIDquery);
+    $UserID = mysql_result($UserIDResult);
     
     //create login session
     session_start();
