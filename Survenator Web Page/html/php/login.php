@@ -41,11 +41,10 @@
     $_SESSION["userid"] = $row['UserID'];
     $_SESSION["user"] = $user;
     
-    
-    //redirect to main page, embedded UserID into redirect link
-    header("Location: /MainOptions.html?UserID=".$_SESSION["userid"]);
-        db_close($dbhandle);
+    db_close($dbhandle);
 
+    //redirect to main page, embedded UserID into redirect link
+    header("Location: /MainOptions.html?UserID=".$UserID);
     die("Logged in<br>");
     
 ?>
