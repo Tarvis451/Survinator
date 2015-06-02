@@ -33,7 +33,7 @@
 	    die();
     }
     
-    $row = mysqli_fetch_array($result);
+    $row = mysql_fetch_array($result);
     
     //create login session
     session_start();
