@@ -44,7 +44,7 @@
     db_close($dbhandle);
     
     //redirect to main page, embedded UserID into redirect link
-    header("Location: /MainOptions.html?UserID={$UserID}");
+    header("Location: /MainOptions.html?UserID='{$UserID}'");
     die("Logged in<br>");
     
 ?>
