@@ -16,7 +16,8 @@
 	    mysql_close($dbhandle);
 	    $response["error"] = 91;
 	    $response["message"] = "Specified user does not exist"
-	    die(json_encode($response));
+            echo json_encode($response);
+	    die();
     }
     
     //query password
@@ -30,7 +31,8 @@
 	    mysql_close($dbhandle);
 	    $response["error"] = 92;
             $response["message"] = "Incorrect password";
-	    die(json_encode($response));
+            echo json_encode($response);
+	    die();
     }
     
     $row = mysqli_fetch_array($result);
@@ -47,7 +49,8 @@
     $response["error"] = 0;
     $response["message"] = "Logged in";
     $response["userid"] = $_SESSION["userid"];
-    die(json_encode($response));
+    echo json_encode($response);
+    die();
     
 ?>
 
