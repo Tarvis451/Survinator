@@ -15,6 +15,7 @@ if(isset($_POST['submit']))
 	$pass = mysql_real_escape_string($_POST['password']);
 	
 	$res = login($user, $pass);
+	echo $res;
 	
 	//successful login
 	if ($res == 0)
@@ -35,7 +36,7 @@ if(isset($_POST['submit']))
 }
 
 ?>
-<font color='red'><?php echo $error; ?></font>
+<center><font color='red'><?php echo $error; ?></font></center>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
       Username: <input type="text" name="username" value="<?php echo $userfield; ?>" >
       Password: <input type="password" name="password" value="">
