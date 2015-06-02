@@ -13,7 +13,7 @@ if(isset($_POST['submit']))
 {
 	$user = mysql_real_escape_string($_POST['username']);
 	$pass = mysql_real_escape_string($_POST['password']);
-	echo "Sending {$user} and {$pass}";
+	echo "Sending {$_POST['username']} and {$_POST['password']}";
 	$res = login($user, $pass);
 	echo $res;
 	
