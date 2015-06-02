@@ -43,7 +43,7 @@
     db_close($dbhandle);
 
     //redirect to main page, embedded UserID into redirect link
-    $url = "travis-webserver.dyndns.org:81/MainOptions.html?UserID=$UserID";
+    $url = "/MainOptions.html?UserID={$UserID}";
     header("Location: ".$url);
     die("Logged in<br>");
     
