@@ -36,8 +36,8 @@ if(isset($_POST['submit']))
 
 ?>
 <font color='red'><?php echo $error; ?></font>
-<form action="loginform.php" method="post">
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
       Username: <input type="text" name="username" value="<?php echo $userfield; ?>" >
       Password: <input type="password" name="password" value="">
-      <input type="submit" value="Log In">
+      <input type="submit" name="submit" value="Log In">
 </form>
