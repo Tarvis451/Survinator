@@ -11,11 +11,9 @@ $userfield = "";
 
 if(isset($_POST['submit']))
 {
-	$user = mysql_real_escape_string($_POST['username']);
-	$pass = mysql_real_escape_string($_POST['password']);
-	echo "Sending {$_POST['username']} and {$_POST['password']}";
+	$user = $_POST['username'];
+	$pass = $_POST['password'];
 	$res = login($user, $pass);
-	echo $res;
 	
 	//successful login
 	if ($res == 0)
