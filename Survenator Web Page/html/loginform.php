@@ -3,7 +3,7 @@
 
 <?php
 
-require '/php/login.php';
+require 'php/login.php';
 
 //handle sent form, call real login function, do stuff based on return
 $error = "";
