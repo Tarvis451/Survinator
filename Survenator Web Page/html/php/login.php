@@ -35,13 +35,17 @@
     //Grab the UserID for the redirect link
     $UserID = mysql_result($result);
     echo $UserID;
+    echo "This will print, though...";
 
-/*    
     //create login session
     session_start();
     $_SESSION["userid"] = $row['UserID'];
     $_SESSION["user"] = $user;
     
+    echo $_SESSION["userid"];
+    echo "That should say 6.";
+    echo $row['UserID'];
+/*
     db_close($dbhandle);
 
     //redirect to main page, embedded UserID into redirect link
