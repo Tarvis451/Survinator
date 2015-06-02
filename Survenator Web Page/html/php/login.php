@@ -34,7 +34,9 @@
 
     //Grab the UserID for the redirect link
     $UserID = mysql_result($result);
-    
+    echo $UserID;
+
+/*    
     //create login session
     session_start();
     $_SESSION["userid"] = $row['UserID'];
@@ -46,5 +48,5 @@
     $url = "/MainOptions.html?UserID=" . $UserID;
     header("Location: " . $url);
     die("Logged in<br>");
-    
+    */
 ?>
