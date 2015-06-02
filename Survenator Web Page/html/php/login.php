@@ -19,7 +19,7 @@
     
     //query password
     //TODO - use hashed password instead of plaintext
-    $sqlquery = "SELECT UserID FROM Users WHERE UserName='{$user}' AND HashPassword='{$pass}' LIMIT 1";
+    $sqlquery = "SELECT UserID FROM Users WHERE UserName='{$user}' AND      HashPassword='{$pass}' LIMIT 1";
     $result = mysql_query($sqlquery);
     
     //fail if wrong password
@@ -30,6 +30,10 @@
     }
     
     $row = mysqli_fetch_array($result);
+
+    //Grab the UserID for the redirect link
+    $UserIDquery = "SELECT UserID FROM Users WHERE UserName='{$user}'";
+    $UserID = mysql_query($UserIDquery);
     
     //create login session
     session_start();
@@ -38,8 +42,8 @@
     
     db_close($dbhandle);
     
-    //redirect to main page
-    header("Location: /MainOptions.html");
+    //redirect to main page, embedded UserID into redirect link
+    header("Location: /MainOptions.html?UserID={UserID}");
     die("Logged in<br>");
     
 ?>

@@ -1,0 +1,92 @@
+<?php
+
+//error_reporting(0);
+require 'connect.php';
+
+?>
+
+
+
+<html>
+<head>
+    
+<style>
+h2
+{
+    text-align: center;   
+}
+#title,form
+{
+    text-align:right;
+    
+form
+{
+    
+    text-align: center;
+}
+    
+div,input
+{
+    text-align: right;
+    justify-content: center;
+}
+textarea{
+	width:280px;
+	height:70px;
+	padding:5px;
+	margin:2000px 0 10px 0;
+	border-radius:5px;
+	border:4px solid #acbfa5;
+    float:right;
+	}
+
+</style>    
+<title>Survenator - Survey Application</title>
+<meta name="robots" content="noindex, nofollow" />
+
+<link rel="stylesheet" type="text/css" href="form.css">
+
+
+</head>
+<body>
+<div class ="main_content">
+ <!-- 
+----------------------------------------------------------------------------------------
+Header div.
+----------------------------------------------------------------------------------------
+-->
+<div class="first"><p>Survey Name and Description</p></div>
+
+
+<!-- 
+----------------------------------------------------------------------------------------
+This div is meant to display final form.
+----------------------------------------------------------------------------------------
+-->
+
+    
+<!--CreateSurvey.php still needs to be created
+Php script will take survey name and description and input into the SurveyList table.
+
+Then redirects to create.html
+-->
+<div>
+  <form action="php/CreateSurvey.php" method="post">
+      Survey Name: <input type="text" name="Name" value="">
+      Survey Description: <input type="text" name="Description" value="" style="height:100px">
+      <input type="submit" value="Continue">
+    </form>
+    
+    <br><br><br><br><br><br>
+ <!-- 
+----------------------------------------------------------------------------------------
+Footer div.
+----------------------------------------------------------------------------------------
+-->
+ <div class="four">
+ <p>Created by Samuel Roman</p>
+ </div>
+</div>
+
+</body>
+</html>
