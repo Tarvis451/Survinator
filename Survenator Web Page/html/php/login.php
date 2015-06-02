@@ -47,5 +47,19 @@ function login($inuser, $inpass)
 	//return 0 indicates succes
     return 0;
 }
+
+//Checks if a user is logged in
+//1 - logged in
+//0 - not logged in
+function checklogin()
+{
+	session_start();
+      
+	if(empty($_SESSION['userid']))
+	{
+		return false;
+	}
+	return true;
+}
     
 ?>
