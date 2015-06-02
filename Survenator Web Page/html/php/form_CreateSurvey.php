@@ -43,7 +43,7 @@
 	}
 ?>
  
-<center><text color='red'><?php echo $error; ?></text></center>
+<center><font color='red'><?php echo $error; ?></font></center>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 	Survey Title: <input type="text" name="title" value="<?php echo $fieldname; ?>">
 	Survey Description: <textarea name="description" value="<?php echo $fielddesc; ?>" rows="5" cols="40"></textarea>
