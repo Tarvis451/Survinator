@@ -12,9 +12,8 @@ $userfield = "";
 if(isset($_POST['submit']))
 {
 	$user = $_POST['username'];
-	echo $user;
 	$pass = $_POST['password'];
-	echo $pass;
+	
 	$res = login($user, $pass);
 	
 	//successful login
