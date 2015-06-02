@@ -20,7 +20,7 @@ if(isset($_POST['submit']))
 	if ($res == 0)
 	{
 		$return = "Registered new user {$user}!<br>";
-		$url = "/index.html";
+		$url = "/UserRegistrationSuccess.html";
 		
     	header("Location: ".$url);
     	die($return);
