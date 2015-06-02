@@ -32,6 +32,7 @@ if(isset($_POST['submit']))
 		$error = "User {$user} already exists!";
 		
 	$userfield = $user;
+}
 
 ?>
 
