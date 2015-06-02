@@ -14,7 +14,7 @@
 	
 	if (isset($_POST['cancel']))
 	{
-		header("Location: /mainOptions.html");
+		header("Location: /MainOptions.html");
 		die("Canceled adding survey");
 	}
 	
@@ -35,7 +35,7 @@
 		if ($ret == -102)
 			$error = "Survey title already taken";
 		
-		if ($ret <= 0)
+		if ($ret >= 0)
 		{
 			$surveyid = $ret;
 			header("Location: /addQuestions?id={$surveyid}");
