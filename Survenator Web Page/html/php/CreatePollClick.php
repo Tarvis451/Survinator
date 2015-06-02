@@ -1,3 +1,3 @@
 <?php
-     header("Location: /create.html?UserID={UserID}");
+     header("Location: /create.html?UserID='{UserID}'");
 ?>
