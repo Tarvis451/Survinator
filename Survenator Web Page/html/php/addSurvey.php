@@ -2,8 +2,6 @@
 
 function addSurvey($intitle, $indesc)
 {
-	echo "Adding {$intitle} with {$indesc}";
-	require 'login.php';
 	require 'dbconnect.php';
 
 	$dbhandle = db_connect();
