@@ -1,20 +1,19 @@
 <?php
 
+function login($user, $pass)
+{
     require 'dbconnect.php';
     $dbhandle = db_connect();
-
-    $user = mysql_real_escape_string($_POST['username']);
-    $pass = mysql_real_escape_string($_POST['password']);
     
     //query user
     $sqlquery = "SELECT UserName FROM Users where UserName='{$user}'";
     $result = mysql_query($sqlquery);
     
-    //fail if user already exists
+    //fail if user does not exist
     if(mysql_num_rows($result) == 0)
     {
 	    mysql_close($dbhandle);
-	    die("Specified user does not exist<br>");
+	    return 91;
     }
     
     //query password
@@ -27,7 +26,7 @@
     if(mysql_num_rows($result) == 0)
     {
 	    mysql_close($dbhandle);
-	    die("Incorrect password<br>");
+	    return 92;
     }
     
     $row = mysql_fetch_array($result);
@@ -42,9 +41,7 @@
     
     db_close($dbhandle);
 
-    //redirect to main page, embedded UserID into redirect link
-    $url = "/MainOptions.html?UserID={$userid}";
-    header("Location: ".$url);
-    die("Logged in<br>");
+    return 0;
+}
     
 ?>
