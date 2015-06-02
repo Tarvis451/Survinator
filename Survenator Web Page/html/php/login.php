@@ -19,8 +19,9 @@
     
     //query password
     //TODO - use hashed password instead of plaintext
-    $sqlquery = "SELECT UserID FROM Users WHERE UserName='{$user}' AND      HashPassword='{$pass}' LIMIT 1";
-    $result = mysql_query($sqlquery);
+    $sqlquery = "SELECT UserID FROM Users WHERE UserName='{$user}' AND HashPassword='{$pass}' LIMIT 1";
+    $result = mysql_query($sqlquery); // This is guaranteed to return ONLY the UserID. That is, if a user logs in successfully,
+    					// The entire result set will be {<value of UserID>} (assuming they are a valid user).
     
     //fail if wrong password
     if(mysql_num_rows($result) == 0)
@@ -43,7 +44,7 @@
     db_close($dbhandle);
     
     //redirect to main page, embedded UserID into redirect link
-    header("Location: /MainOptions.html?UserID='{UserID}'");
+    header("Location: /MainOptions.html?UserID={$UserID}");
     die("Logged in<br>");
     
 ?>
