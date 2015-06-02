@@ -63,11 +63,7 @@ Php script will take survey name and description and input into the SurveyList t
 Then redirects to create.html
 -->
 <div>
-  <form action="php/CreateSurvey.php" method="post">
-      Survey Name: <input type="text" name="Name" value="">
-      Survey Description: <input type="text" name="Description" value="" style="height:100px">
-      <input type="submit" value="Continue">
-    </form>
+	<?php include 'CreateSurveyForm.php'; ?>
     
     <br><br><br><br><br><br>
  <!-- 
