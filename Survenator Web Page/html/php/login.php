@@ -2,6 +2,7 @@
 
 function login($user, $pass)
 {
+	echo "Trying {$user} with {$pass}";
     require 'dbconnect.php';
     $dbhandle = db_connect();
     
