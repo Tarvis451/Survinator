@@ -12,7 +12,7 @@ $pass = mysql_real_escape_string($_POST['password']);
 if ((strlen($user) < 3) || (strlen($pass) < 3))
 {
 	db_close($dbhandle);
-	$response["error"]=81
+	$response["error"]=81;
 	$response["message"]="Username and password must be at least 3 characters long!";
 	echo json_encode($response);
 	die();
@@ -24,7 +24,7 @@ $result = mysql_query($sqlquery);
 if(mysql_num_rows($result) != 0)
 {
 	db_close($dbhandle);
-	$response["error"]=82
+	$response["error"]=82;
 	$response["message"]="User already exists!";
 	echo json_encode($response);
 	die();
@@ -36,7 +36,7 @@ $result = mysql_query($sqlquery);
 //redirect to registration success page
 db_close($dbhandle);
 //header("location: /UserRegistrationSuccess.html");
-$response["error"]=1
+$response["error"]=1;
 $response["message"]="You are registered!";
 echo json_encode($response);
 die();
