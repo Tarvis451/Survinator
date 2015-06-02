@@ -2,10 +2,11 @@
 
 function login($inuser, $inpass)
 {
-	$user = mysql_real_escape_string($inuser);
-	$pass = mysql_real_escape_string($inpass);
     require 'dbconnect.php';
     $dbhandle = db_connect();
+    
+    $user = mysql_real_escape_string($inuser);
+	$pass = mysql_real_escape_string($inpass);
     
     //query user
     $sqlquery = "SELECT UserName FROM Users where UserName='{$user}'";
