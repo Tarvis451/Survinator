@@ -43,14 +43,14 @@
     $_SESSION["user"] = $user;
     
     echo $_SESSION["userid"];
-    echo "That should say 6.";
-    echo $row['UserID'];
+    echo "That should say 6====>";
+    echo {$row['UserID']};
 /*
     db_close($dbhandle);
 
     //redirect to main page, embedded UserID into redirect link
-    $url = "/MainOptions.html?UserID=" . $UserID;
-    header("Location: " . $url);
+    $url = "/MainOptions.html?UserID=$UserID";
+    header("Location: ".$url);
     die("Logged in<br>");
     */
 ?>
