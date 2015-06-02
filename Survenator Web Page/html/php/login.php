@@ -1,8 +1,9 @@
 <?php
 
-function login($user, $pass)
+function login($inuser, $inpass)
 {
-	echo "Trying {$user} with {$pass}";
+	$user = mysql_real_escape_string($inuser);
+	$pass = mysql_real_escape_string($inpass);
     require 'dbconnect.php';
     $dbhandle = db_connect();
     
