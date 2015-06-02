@@ -32,11 +32,10 @@ if(isset($_POST['submit']))
 		$error = "Incorrect password.";
 		
 	$userfield = $user;
-	
 }
 
 ?>
-
+<font color='red'><?php echo $error; ?></font>
 <form action= <?php echo $_SERVER["PHP_SELF"]; ?> method="post">
       Username: <input type="text" name="username" value=<?php echo $fieldname; ?> >
       Password: <input type="password" name="password" value="">
