@@ -41,6 +41,7 @@ function login($user, $pass)
     
     db_close($dbhandle);
 
+	//return 0 indicates succes
     return 0;
 }
     
