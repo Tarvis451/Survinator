@@ -33,9 +33,7 @@
     $row = mysqli_fetch_array($result);
 
     //Grab the UserID for the redirect link
-    $UserIDquery = "SELECT UserID FROM Users WHERE UserName='{$user}'";
-    $UserIDresult = mysql_query($UserIDquery);
-    $UserID = mysql_result($UserIDResult);
+    $UserID = mysql_result($result);
     
     //create login session
     session_start();
@@ -45,7 +43,8 @@
     db_close($dbhandle);
 
     //redirect to main page, embedded UserID into redirect link
-    header("Location: /MainOptions.html?UserID={$UserID}");
+    $url = "/MainOptions.html?UserID=$UserID";
+    header("Location: ".$url);
     die("Logged in<br>");
     
 ?>
