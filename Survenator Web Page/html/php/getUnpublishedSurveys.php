@@ -41,7 +41,7 @@ if ($surveylist != 0)
 {?>
 <table style="width:100%">
 	<tr>
-		<th>Unpublished Surveys</th>
+		<th>Your Unpublished Surveys</th>
 	</tr>
 <?php
 foreach ($surveylist as $survey)
