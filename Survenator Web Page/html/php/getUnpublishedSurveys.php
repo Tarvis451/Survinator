@@ -44,9 +44,8 @@ if ($surveylist != 0)
 		<th>Unpublished Surveys</th>
 	</tr>
 <?php
-
 foreach ($surveylist as $survey)
-	echo "<tr><td><a href = '/create.html?id={$survey['SurveyID']}'>{$survey['SurveyName']}</a></td></tr>";
+	echo "<tr><td><center><a href = '/create.html?id={$survey['SurveyID']}'>{$survey['SurveyName']}</a></center></td></tr>";
 ?>
 </table> 
 <?php } ?>
