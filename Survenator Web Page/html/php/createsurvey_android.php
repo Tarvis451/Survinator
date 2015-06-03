@@ -1,6 +1,6 @@
 <?php
 	include 'login.php';
-	include 'addSurvey.php';
+	include 'createsurvey.php';
 	
 	$error = "";
 	$fieldname = "";
