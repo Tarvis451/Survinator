@@ -37,7 +37,7 @@ function getUnpublishedSurveys()
 
 $surveylist = getUnpublishedSurveys();
 
-if ($surveylist != 0)
+if ($surveylist > 0)
 {?>
 <table style="width:100%">
 	<tr>
