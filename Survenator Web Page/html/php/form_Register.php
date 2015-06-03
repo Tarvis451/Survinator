@@ -39,6 +39,7 @@ if(isset($_POST['submit']))
 <center><font color='red'><?php echo $error; ?></font></center>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     Username: <input type="text" name="username" value="<?php echo $userfield; ?>">
+    <center><br>NOTICE: Passwords are currently NOT hashed! Do not register with a password you use a lot!<br></center>
     Password: <input type="password" name="password" value="">
     <input type="submit" name="submit" value="Register">
 </form>
