@@ -8,7 +8,7 @@ function getUnpublishedSurveys()
 	if (!isset($_SESSION['userid']))
 		return -1;
 	
-	include 'dbconnect.php';
+	include_once 'dbconnect.php';
 	$dbhandle = db_connect();
 	
 	//get DB query
