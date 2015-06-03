@@ -5,7 +5,7 @@
 
 function getPublishedSurveys()
 {
-	include 'dbconnect.php';
+	include_once 'dbconnect.php';
 	$dbhandle = db_connect();
 	
 	//get DB query
