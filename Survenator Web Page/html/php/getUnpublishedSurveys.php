@@ -18,9 +18,10 @@ function getUnpublishedSurveys()
 	$query = "SELECT SurveyID, SurveyName from SurveyList WHERE UserID = {$userid} AND Published = 0";
 	$result = mysql_query($query);
 	
-	while (mysql_num_rows($result) != 0)
+	$surveylist = array();
+	
+	while ($row = mysql_fetch_array($result);)
 	{
-		$row = mysql_fetch_array($result);
 		array_push($surveylist, $row);
 	}
 	
