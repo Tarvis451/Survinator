@@ -20,7 +20,7 @@ function getUnpublishedSurveys()
 	
 	$surveylist = array();
 	
-	while ($row = mysql_fetch_array($result);)
+	while ($row = mysql_fetch_array($result))
 	{
 		array_push($surveylist, $row);
 	}
