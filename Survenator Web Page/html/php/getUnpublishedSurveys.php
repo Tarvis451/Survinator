@@ -39,7 +39,7 @@ function getUnpublishedSurveys()
 <?php
 $surveylist = getUnpublishedSurveys();
 foreach ($surveylist as $survey)
-	echo <td><a href = "/create.html?id={$survey['SurveyID']}">$survey['SurveyName']</a></td>;
+	echo "<td><a href = "/create.html?id={$survey['SurveyID']}">$survey['SurveyName']</a></td>";
 ?>
   	</tr>
 </table> 
