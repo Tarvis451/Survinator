@@ -5,9 +5,8 @@
 
 function getUnpublishedSurveys()
 {
-	//Supplied userid doesn't match your login.
-	//if ($_SESSION['userid'] != $inuserid)
-	//	return -1;
+	if (!isset($_SESSION['userid']))
+		return -1;
 	
 	include 'dbconnect.php';
 	$dbhandle = db_connect();
@@ -17,6 +16,9 @@ function getUnpublishedSurveys()
 	
 	$query = "SELECT SurveyID, SurveyName from SurveyList WHERE UserID = {$userid} AND Published = 0";
 	$result = mysql_query($query);
+	
+	if (mysql_num_rows($result) == 0)
+		return 0;
 	
 	$surveylist = array();
 	
@@ -31,14 +33,20 @@ function getUnpublishedSurveys()
 }
 
 ?>
+<?php 
 
+$surveylist = getUnpublishedSurveys();
+
+if ($surveylist != 0)
+{?>
 <table style="width:100%">
 	<tr>
 		<th>Unpublished Surveys</th>
 	</tr>
 <?php
-$surveylist = getUnpublishedSurveys();
+
 foreach ($surveylist as $survey)
 	echo "<tr><td><a href = '/create.html?id={$survey['SurveyID']}'>{$survey['SurveyName']}</a></td></tr>";
 ?>
 </table> 
+<?php } ?>
