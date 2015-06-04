@@ -61,5 +61,15 @@ function checklogin()
 	}
 	return true;
 }
+
+function getUserID()
+{
+	session_start();
+      
+	if(empty($_SESSION['userid']))
+		return -1;
+	else
+		return $_SESSION['userid'];
+}
     
 ?>
