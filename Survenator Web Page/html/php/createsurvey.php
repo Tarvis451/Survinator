@@ -14,7 +14,7 @@ function addSurvey($intitle, $indesc)
 	if (!isset($_SESSION['userid']))
 	{
 		db_close($dbhandle);
-		return -1
+		return -1;
 	}
 	
 	$userid = $_SESSION['userid'];
