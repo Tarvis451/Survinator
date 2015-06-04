@@ -17,14 +17,15 @@ if ($questionlist != 0)
 <?php
 foreach ($questionlist as $question)
 {
-	echo "<tr><td>{$question['QuestionID']}</td></tr>";
-	echo "<tr><td><center><a href = '/editQuestion.html?sid={$id}&qid={$question['QuestionID']}'>{$question['QuestionText']})</a></center></td></tr>";
+	echo "<tr><td>{$question['QuestionID']}</td>";
+	echo "<td><center><a href = '/editQuestion.html?sid={$id}&qid={$question['QuestionID']}'>{$question['QuestionText']})</a></center></td>";
 	if ($question['QuestionType'] == "TF")
-		echo "<tr><td>True/False</td></tr>";
+		echo "<td>True/False</td>";
 	if ($question['QuestionType'] == "MC")
-		echo "<tr><td>Multiple Choice</td></tr>";
+		echo "<td>Multiple Choice</td>";
 	if ($question['QuestionType'] == "FR")
-		echo "<tr><td>Free Response</td></tr>";
+		echo "<td>Free Response</td>";
+	echo "</tr>";
 }
 ?>
 
