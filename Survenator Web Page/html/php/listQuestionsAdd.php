@@ -9,7 +9,6 @@ if ($questionlist != 0)
 <center><b>Survey Questions</b></center>
 <table style="width:100%">
 	<tr>
-		
 		<th>Question #</th>
 		<th>Question Text</th>
 		<th>Question Type</th>
@@ -17,6 +16,7 @@ if ($questionlist != 0)
 	
 <?php
 foreach ($questionlist as $question)
+{
 	echo "<tr><td>{$question['QuestionID'}</td></tr>";
 	echo "<tr><td><center><a href = '/editQuestion.html?sid={$id}&qid={$question['QuestionID']}'>{$question['QuestionText']})</a></center></td></tr>";
 	if ($question['QuestionType'] == "TF")
@@ -25,6 +25,7 @@ foreach ($questionlist as $question)
 		echo "<tr><td>Multiple Choice</td></tr>";
 	if ($question['QuestionType'] == "FR")
 		echo "<tr><td>Free Response</td></tr>";
+}
 ?>
 
 </table> 
