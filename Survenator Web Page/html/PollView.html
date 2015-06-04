@@ -70,22 +70,9 @@ This div is meant to display final form.
 -->
 
 <div>
-    <h2>Welcome to the Survinator, <?php echo $_SESSION['user']; ?>!</h2>
-    <!--First button never works for whatever reason-->
-     <form id="blank">
-        <input hidden="hidden" type="submit" value="" >
-     </form>
-
-        <br>
-         <form class="button2" action="SurveyNameandDescription.html">
-             <input type="submit" value="Create Poll">
-         </form>
-
-         <br>
-     
-    <form action="list.html">
-        <input type="submit" value="Poll List" name="polllistlink">
-    </form>
+    <h2><?php echo $_SESSION['SurveyName']; ?>!</h2>
+    <p><?php echo $_SESSION['SurveyDescription']; ?></p>
+    
     
 </div>
     
