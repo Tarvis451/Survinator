@@ -10,24 +10,20 @@
 	$result = mysql_query($query);
 
 	if (mysql_num_rows($result) == 0)
+	{
 		die();
+	}
 
+	//build the array to send out with json
 	$surveylist = array();
 
 	while ($row = mysql_fetch_array($result))
 	{
-		//$surveylist[$row["SurveyID"]]  = $row["SurveyName"];
 		$surveylist[] = array( "SurveyID" => $row["SurveyID"], "SurveyName" => $row["SurveyName"]);
 	}
  
 	db_close($dbhandle);
 
-	$blarg = array("asdasd" => "1");
-
-	//echo json_encode($surveylist);
-	//echo "what does a php do";
-	//die();
-	//echo json_encode($surveylist, JSON_FORCE_OBJECT);
-	echo json_encode($blarg);
+	echo json_encode($surveylist);
 	die();
 ?>
