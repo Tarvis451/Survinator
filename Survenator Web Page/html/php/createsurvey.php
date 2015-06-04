@@ -5,9 +5,18 @@ function addSurvey($intitle, $indesc)
 	require 'dbconnect.php';
 
 	$dbhandle = db_connect();
+	session_start();
 
 	$title = mysql_real_escape_string($intitle);
 	$desc = mysql_real_escape_string($indesc);
+	
+	//check if user is logged in
+	if (!isset($_SESSION['userid']))
+	{
+		db_close($dbhandle);
+		return -1
+	}
+	
 	$userid = $_SESSION['userid'];
 
 	//check if name is valid
