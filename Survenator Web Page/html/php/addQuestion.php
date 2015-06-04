@@ -2,13 +2,13 @@
 
 function addQuestionTF($intext, $insid)
 {
-	require 'dbconnect.php';
+	require_once 'dbconnect.php';
 
 	$dbhandle = db_connect();
 	session_start();
 
-	$text = mysql_real_escape_string($intitle);
-	$sid = mysql_real_escape_string($indesc);
+	$text = mysql_real_escape_string($intext);
+	$sid = mysql_real_escape_string($insid);
 	
 	//check if user is logged in
 	if (!isset($_SESSION['userid']))
@@ -17,13 +17,13 @@ function addQuestionTF($intext, $insid)
 		return -1;
 	}
 	
-	$userid = $_SESSION['userid'];
+	//$userid = $_SESSION['userid'];
 
 	//check if name is valid
 	if(strlen($text) < 3)
 	{
 		db_close($dbhandle);
-		return -101;
+		return -201;
 	}
 
 	//check if text is already used
@@ -33,7 +33,7 @@ function addQuestionTF($intext, $insid)
 	if(mysql_num_rows($result) != 0)
 	{
 		db_close($dbhandle);
-		return -102;
+		return -202;
 	}
 	
 	$qid = getNewQuestionID($sid);

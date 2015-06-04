@@ -6,21 +6,19 @@
 	$QuestionID = $_GET['qid'];
 	
 	$error = "";
-	$fieldname = "";
+	$fieldtext = "";
 	
 	if (isset($_POST['cancel']))
 	{
-		header("Location: /create.html?id={$SurveId}");
+		header("Location: /create.html?id={$SurveyId}");
 		die("Canceled adding question");
 	}
 	
 	if (isset($_POST['submit']))
 	{
-		$name = $_POST['title'];
-		$desc = $_POST['description'];
+		$text = $_POST['text'];
 		
-		$fieldname = $name;
-		$fielddesc = $desc;
+		$fieldtext = $text;
 		
 		$ret = addQuestionTF($name,$SurveyID);
 		
@@ -40,7 +38,7 @@
  
 <center><font color='red'><?php echo $error; ?></font></center>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-	Question Text: <input type="text" name="title" value="<?php echo $fieldname; ?>">
+	Question Text: <input type="text" name="text" value="<?php echo $fieldname; ?>">
 	<input type="submit" name="submit" value="Add Question">
 	<br><br><input type="submit" name="cancel" value="Cancel">
 </form>
