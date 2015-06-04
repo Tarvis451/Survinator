@@ -8,7 +8,7 @@ function getQuestions($surveyid)
 	$dbhandle = db_connect();
 	
 	//get DB query
-	$query = "SELECT DISTINCT QuestionID, QuestionText, QuestionType from Surveys WHERE SurveyID=($surveyid)";
+	$query = "SELECT DISTINCT QuestionID, QuestionText, QuestionType from Surveys WHERE SurveyID={$surveyid}";
 	$result = mysql_query($query);
 	
 	if (mysql_num_rows($result) == 0)
