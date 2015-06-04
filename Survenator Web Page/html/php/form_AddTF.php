@@ -44,7 +44,7 @@
 ?>
  
 <center><font color='red'><?php echo $error; ?></font></center>
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>?id=<?php echo $surveyid; ?>" method="post">
 	Question Text: <input type="text" name="text" value="<?php echo $fieldtext; ?>">
 	<input type="submit" name="submit" value="Add Question">
 	<br><br><input type="submit" name="cancel" value="Cancel">
