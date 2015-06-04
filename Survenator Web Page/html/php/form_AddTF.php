@@ -7,7 +7,6 @@
 	
 	$error = "";
 	$fieldname = "";
-	$fielddesc = "";
 	
 	if (isset($_POST['cancel']))
 	{
@@ -23,7 +22,7 @@
 		$fieldname = $name;
 		$fielddesc = $desc;
 		
-		$ret = addQuestionTF($name,$desc,$SurveyID,$QuestionID);
+		$ret = addQuestionTF($name,$SurveyID);
 		
 		if ($ret == -201)
 			$error = "Question title must have 3 or more characters";
@@ -41,8 +40,7 @@
  
 <center><font color='red'><?php echo $error; ?></font></center>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-	Survey Title: <input type="text" name="title" value="<?php echo $fieldname; ?>">
-	Survey Description: <textarea name="description" rows="5" cols="40"><?php echo $fielddesc; ?></textarea>
+	Question Text: <input type="text" name="title" value="<?php echo $fieldname; ?>">
 	<input type="submit" name="submit" value="Add Question">
 	<br><br><input type="submit" name="cancel" value="Cancel">
 </form>
