@@ -22,8 +22,9 @@
 
 	$name = $_POST['title'];
 	$desc = $_POST['description'];
+	$pub = 1;
 	
-	$ret = addSurvey($name,$desc);
+	$ret = addSurvey($name,$desc, $pub);
 	
 	if ($ret == -101)
 	{
