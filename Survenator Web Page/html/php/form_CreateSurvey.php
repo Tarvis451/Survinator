@@ -37,8 +37,7 @@
 		if ($ret >= 0)
 		{
 			$surveyid = $ret;
-			//header("Location: /create.html?id={$surveyid}");
-			header("Location: /MainOptions.html");
+			header("Location: /create.html?id={$surveyid}");
 			die("Successfully created survey with id {$surveyid}");
 		}
 	}
