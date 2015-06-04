@@ -8,7 +8,7 @@ function getQuestions($surveyid)
 	$dbhandle = db_connect();
 	
 	//get DB query
-	$query = "SELECT QuestionID, QuestionText, QuestionType from Surveys WHERE SurveyID='{$surveyid}'";
+	$query = "SELECT QuestionID, QuestionText, QuestionType from Surveys WHERE SurveyID=($surveyid)";
 	$result = mysql_query($query);
 	
 	if (mysql_num_rows($result) == 0)
@@ -18,7 +18,7 @@ function getQuestions($surveyid)
 	
 	while ($row = mysql_fetch_array($result))
 	{
-		array_push($questionist, $row);
+		array_push($questionlist, $row);
 	}
 	
 	db_close($dbhandle);
