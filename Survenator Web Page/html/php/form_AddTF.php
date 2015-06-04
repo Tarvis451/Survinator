@@ -20,7 +20,7 @@
 		
 		$fieldtext = $text;
 		
-		$ret = addQuestionTF($name,$SurveyID);
+		$ret = addQuestionTF($text,$SurveyID);
 		
 		if ($ret == -201)
 			$error = "Question title must have 3 or more characters";
