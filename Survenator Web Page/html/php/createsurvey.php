@@ -1,6 +1,6 @@
 <?php
 
-function addSurvey($intitle, $indesc)
+function addSurvey($intitle, $indesc, $inpub)
 {
 	require 'dbconnect.php';
 
@@ -37,7 +37,7 @@ function addSurvey($intitle, $indesc)
 	}
 
 	//info looks good, add to db
-	$query = "INSERT INTO SurveyList(SurveyName, UserID, Published, SurveyDescription) VALUES ('{$title}','{$userid}',0,'{$desc}')";
+	$query = "INSERT INTO SurveyList(SurveyName, UserID, Published, SurveyDescription) VALUES ('{$title}','{$userid}',{$inpub},'{$desc}')";
 	$result = mysql_query($query);
 
 	//get survey id for retrn
