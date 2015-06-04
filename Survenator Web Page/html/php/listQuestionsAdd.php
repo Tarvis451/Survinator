@@ -7,6 +7,7 @@ if ($questionlist != 0)
 
 ?>
 <center><b>Survey Questions</b></center>
+<br><br>
 <table style="width:100%">
 	<tr>
 		<th>Question #</th>
@@ -23,7 +24,7 @@ foreach ($questionlist as $question)
 		echo "<td>True/False</td>";
 	if ($question['QuestionType'] == "MC")
 		echo "<td>Multiple Choice</td>";
-	if ($question['QuestionType'] == "FR")
+	if ($question['QuestionType'] == "SA")
 		echo "<td>Free Response</td>";
 	echo "</tr>";
 }
