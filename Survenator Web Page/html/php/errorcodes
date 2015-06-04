@@ -4,4 +4,4 @@
 -92 login bad password
 -81 reg user/pass too short
 -82 reg user exists
--1 tried to modify a different user's survey
+-1 login error (either not logged in or trying to modify survey that isn't yours)
