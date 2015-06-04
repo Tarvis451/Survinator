@@ -2,8 +2,7 @@
 	//include_once 'login.php';
 	include_once 'addQuestion.php';
 	
-	$SurveyID = $_GET['sid'];
-	$QuestionID = $_GET['qid'];
+	$SurveyID = $_GET['id'];
 	
 	$error = "";
 	$fieldtext = "";
