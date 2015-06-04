@@ -17,7 +17,7 @@ if ($questionlist != 0)
 <?php
 foreach ($questionlist as $question)
 {
-	echo "<tr><td>{$question['QuestionID'}</td></tr>";
+	echo "<tr><td>{$question['QuestionID']}</td></tr>";
 	echo "<tr><td><center><a href = '/editQuestion.html?sid={$id}&qid={$question['QuestionID']}'>{$question['QuestionText']})</a></center></td></tr>";
 	if ($question['QuestionType'] == "TF")
 		echo "<tr><td>True/False</td></tr>";
