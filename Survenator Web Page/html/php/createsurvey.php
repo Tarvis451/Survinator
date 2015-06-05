@@ -1,9 +1,9 @@
 <?php
 
+require_once 'dbconnect.php';
+
 function addSurvey($intitle, $indesc, $inpub)
 {
-	require 'dbconnect.php';
-
 	$dbhandle = db_connect();
 	session_start();
 
@@ -51,6 +51,19 @@ function addSurvey($intitle, $indesc, $inpub)
 	db_close($dbhandle);
 
 	return($surveyid);	
+}
+
+function publishSurvey($insurveyid)
+{
+	$dbhandle = db_connect();
+	
+	$surveyid = mysql_real_escape_string($insurveyid);
+	
+	$query = "UPDATE SurveyList SET Published=1 WHERE SurveyID={$surveyid}";
+	
+	db_close($dbhandle);
+	
+	return;
 }
 
 ?>
