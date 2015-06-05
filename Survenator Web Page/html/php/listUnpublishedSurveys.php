@@ -13,7 +13,7 @@ if ($surveylist > 0)
 	</tr>
 <?php
 foreach ($surveylist as $survey)
-	echo "<tr><td><center><a href = '/create.html?id={$survey['SurveyID']}'>{$survey['SurveyName']}</a></center></td></tr>";
+	echo "<tr><td><center><a href = '/create.html?surveyid={$survey['SurveyID']}'>{$survey['SurveyName']}</a></center></td></tr>";
 ?>
 </table> 
 
