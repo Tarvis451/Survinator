@@ -64,6 +64,17 @@ This div is meant to display final form.
 -->
 
 <div>
+	<?php
+	
+	require_once 'php/getSurveyInfo.php';
+	
+	$info = getSurveyInfo($_GET['surveyid']);
+	
+	?>
+	
+	<div><p><b><?php echo $info['SurveyName']; ?></b></div><br>
+	<div><p><?php echo $info['SurveyDescription']; ?></div>
+	<br><br><br>
 	<div><a id="link" href="MainOptions.html"><p>Back to Main Menu</p></a></div>
 	<br><br>
     <h2>Poll Creation: Select Question Type</h2>
