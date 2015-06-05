@@ -1,7 +1,7 @@
 <?php 
 include_once 'getQuestions.php';
-$sid = $_GET['id'];
-$questionlist = getQuestions($sid);
+$surveyid = $_GET['surveyid'];
+$questionlist = getQuestions($surveyid);
 
 if ($questionlist != 0)
 {
@@ -20,7 +20,7 @@ if ($questionlist != 0)
 foreach ($questionlist as $question)
 {
 	echo "<tr><td>{$question['QuestionID']}</td>";
-	echo "<td><a href = '/editQuestion.html?sid={$sid}&qid={$question['QuestionID']}'>{$question['QuestionText']}</a></td>";
+	echo "<td><a href = '/editQuestion.html?surveyid={$surveyid}&questionid={$question['QuestionID']}'>{$question['QuestionText']}</a></td>";
 	if ($question['QuestionType'] == "TF")
 		echo "<td>True/False</td>";
 	if ($question['QuestionType'] == "MC")
