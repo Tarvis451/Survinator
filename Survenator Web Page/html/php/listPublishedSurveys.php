@@ -15,7 +15,7 @@ if ($surveylist != 0)
 <?php
 foreach ($surveylist as $survey)
     //test going to individual poll page - Sam
-    echo "<tr><td><center><a href = '/PollView.html?id={$survey['SurveyID']}'>{$survey['SurveyName']}</a></center></td></tr>";
+    echo "<tr><td><center><a href = '/PollView.html?surveyid={$survey['SurveyID']}'>{$survey['SurveyName']}</a></center></td></tr>";
     
 	//echo "<tr><td><center><a href = '/surveyOptions.html?id={$survey['SurveyID']}'>{$survey['SurveyName']}</a></center></td></tr>";
 ?>
