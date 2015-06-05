@@ -3,6 +3,7 @@
 function addQuestionTF($intext, $insid)
 {
 	require_once 'dbconnect.php';
+	require_once 'login.php';
 
 	$dbhandle = db_connect();
 	session_start();
