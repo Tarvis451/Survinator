@@ -2,14 +2,14 @@
 	require_once 'addQuestion.php';
 	
 	$surveyid = $_GET['sid'];
-	echo $sid;
+	echo $surveyid;
 	
 	
 	if (isset($_POST['sid']))
 		$surveyid = $_POST['sid'];
 	
 	echo "test";	
-	echo $sid;
+	echo $surveyid;
 	
 	$error = "";
 	$fieldtext = "";
