@@ -2,14 +2,9 @@
 	require_once 'addQuestion.php';
 	
 	$surveyid = $_GET['sid'];
-	echo $surveyid;
-	
 	
 	if (isset($_POST['sid']))
 		$surveyid = $_POST['sid'];
-	
-	echo "test";	
-	echo $surveyid;
 	
 	$error = "";
 	$fieldtext = "";
@@ -27,6 +22,8 @@
 		$fieldtext = $text;
 		
 		$ret = addQuestionTF($text,$surveyid);
+		
+		echo "test";	
 		if ($ret == -1)
 			$error = "Survey id#{$surveyid} does not belong to you!";
 		
