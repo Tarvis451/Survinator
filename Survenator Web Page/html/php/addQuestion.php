@@ -70,7 +70,7 @@ function addQuestionTF($intext, $insid)
 
 function getNewQuestionID($insid)
 {
-	$query = "SELECT QuestionID FROM Surveys WHERE SurveyID='{$insid}' ORDER BY 'QuestionID' DESC LIMIT 1";
+	$query = "SELECT QuestionID FROM Surveys WHERE SurveyID='{$insid}' ORDER BY QuestionID DESC LIMIT 1";
 	$result = mysql_query($query);
 	
 	//no questions added yet, this will be  the first
