@@ -11,7 +11,7 @@
 	
 	if (isset($_POST['cancel']))
 	{
-		header("Location: /create.html?id={$surveyid}");
+		header("Location: /create.html?surveyid={$surveyid}");
 		die("Canceled adding question");
 	}
 	
@@ -41,7 +41,7 @@
 		
 		if ($ret >= 0)
 		{
-			header("Location: /create.html?id={$surveyid}");
+			header("Location: /create.html?surveyid={$surveyid}");
 			die("Successfully added a new question to Survey #{$surveyid}");
 		}
 	}
