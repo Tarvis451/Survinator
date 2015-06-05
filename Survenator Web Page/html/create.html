@@ -69,8 +69,7 @@ This div is meant to display final form.
 	require_once 'php/getSurveyInfo.php';
 	
 	$info = getSurveyInfo($_GET['surveyid']);
-	echo $_GET['surveyid'];
-	
+	echo $info['SurveyName'];
 	?>
 	
 	<div><p><b><?php echo $info['SurveyName']; ?></b></div><br>
