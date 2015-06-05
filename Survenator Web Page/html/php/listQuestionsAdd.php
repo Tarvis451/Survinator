@@ -9,7 +9,7 @@ if ($questionlist != 0)
 ?>
 <center><b>Survey Questions</b></center>
 <br><br>
-<table style="width:100%">
+<table style="width:100%, text-align:center" >
 	<tr>
 		<th>Question #</th>
 		<th>Question Text</th>
