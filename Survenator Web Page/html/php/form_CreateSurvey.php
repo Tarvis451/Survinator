@@ -26,7 +26,7 @@
 		$fieldname = $name;
 		$fielddesc = $desc;
 		
-		$ret = addSurvey($name,$desc);
+		$ret = addSurvey($name,$desc,0);
 		
 		if ($ret == -101)
 			$error = "Survey title must have 3 or more characters";
