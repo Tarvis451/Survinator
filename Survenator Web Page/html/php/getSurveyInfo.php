@@ -1,8 +1,10 @@
 <?php
 
+require_once 'dbconnect.php';
+
 function getSurveyInfo($insid)
 {
-	require_once 'dbconnect.php';
+	
 	$dbhandle = db_connect();
 	
 	$surveyid = mysql_real_escape_string($insid);
@@ -19,7 +21,6 @@ function getSurveyInfo($insid)
 
 function getQuestionInfo($insid, $inqid)
 {
-	require_once 'dbconnect.php';
 	$dbhandle = db_connect();
 	
 	$surveyid = mysql_real_escape_string($insid);
