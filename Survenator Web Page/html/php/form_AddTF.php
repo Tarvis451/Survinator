@@ -2,6 +2,8 @@
 	require_once 'addQuestion.php';
 	
 	$surveyid = $_GET['sid'];
+	echo $sid;
+	
 	
 	if (isset($_POST['sid']))
 		$surveyid = $_POST['sid'];
