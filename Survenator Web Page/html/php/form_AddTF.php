@@ -23,7 +23,6 @@
 		
 		$ret = addQuestionTF($text,$surveyid);
 		
-		echo "test";	
 		if ($ret == -1)
 			$error = "Survey id#{$surveyid} does not belong to you!";
 		
