@@ -10,7 +10,7 @@ function getSurveyInfo($insid)
 	$query = "SELECT * from SurveyList WHERE SurveyID={$surveyid}";
 	$result = mysql_query($query);
 	
-	$info = mysql_fetch_row($result);
+	$info = mysql_fetch_array($result);
 	
 	db_close($dbhandle);
 	
@@ -28,7 +28,7 @@ function getQuestionInfo($insid, $inqid)
 	$query = "SELECT * from Surveys WHERE SurveyID={$surveyid} AND QuestionID={$questionid}";
 	$result = mysql_query($query);
 	
-	$info = mysql_fetch_row($result);
+	$info = mysql_fetch_array($result);
 	
 	db_close($dbhandle);
 	
