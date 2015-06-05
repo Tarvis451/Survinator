@@ -60,6 +60,7 @@ function publishSurvey($insurveyid)
 	$surveyid = mysql_real_escape_string($insurveyid);
 	
 	$query = "UPDATE SurveyList SET Published=1 WHERE SurveyID={$surveyid}";
+	$result = mysql_query($query);
 	
 	db_close($dbhandle);
 	
