@@ -1,13 +1,28 @@
 <?php
 
-function addQuestionTF($intext, $insid)
+require_once 'dbconnect.php';
+require_once 'login.php';
+
+function getNewQuestionID($insid)
 {
-	require_once 'dbconnect.php';
-	require_once 'login.php';
+	$query = "SELECT QuestionID FROM Surveys WHERE SurveyID='{$insid}' ORDER BY QuestionID DESC LIMIT 1";
+	$result = mysql_query($query);
+	
+	//no questions added yet, this will be  the first
+	if(mysql_num_rows($result) == 0)
+		return 1;
+	
+	//add 1 to highest existing qid
+	$row = mysql_fetch_array($result);
 
-	$dbhandle = db_connect();
-	session_start();
+	$qid = $row['QuestionID'];
+	$qid++;
+	
+	return $qid;
+}
 
+function validateInputs($intext, $insid)
+{
 	$text = mysql_real_escape_string($intext);
 	$sid = mysql_real_escape_string($insid);
 	
@@ -52,6 +67,23 @@ function addQuestionTF($intext, $insid)
 		return -202;
 	}
 	
+	//input is fine
+	return 1;
+}
+
+function addQuestionTF($intext, $insid)
+{
+	$dbhandle = db_connect();
+	session_start();
+
+	$text = mysql_real_escape_string($intext);
+	$sid = mysql_real_escape_string($insid);
+	
+	$valid = validateInputs($text, $sid);
+	
+	if ($valid != 1)
+		return $valid;
+	
 	$qid = getNewQuestionID($sid);
 
 	//info looks good, add to db
@@ -68,22 +100,28 @@ function addQuestionTF($intext, $insid)
 	return 0;	
 }
 
-function getNewQuestionID($insid)
+function addQuestionSA($intext, $insid)
 {
-	$query = "SELECT QuestionID FROM Surveys WHERE SurveyID='{$insid}' ORDER BY QuestionID DESC LIMIT 1";
-	$result = mysql_query($query);
-	
-	//no questions added yet, this will be  the first
-	if(mysql_num_rows($result) == 0)
-		return 1;
-	
-	//add 1 to highest existing qid
-	$row = mysql_fetch_array($result);
+	$dbhandle = db_connect();
+	session_start();
 
-	$qid = $row['QuestionID'];
-	$qid++;
+	$text = mysql_real_escape_string($intext);
+	$sid = mysql_real_escape_string($insid);
 	
-	return $qid;
+	$valid = validateInputs($text, $sid);
+	
+	if ($valid != 1)
+		return $valid;
+	
+	$qid = getNewQuestionID($sid);
+
+	//info looks good, add to db
+	$query = "INSERT INTO Surveys(SurveyID, QuestionID, QuestionType, QuestionText, ResponseID) VALUES ({$sid}, {$qid}, 'SA', '{$text}', 1)";
+	$result = mysql_query($query);
+
+	db_close($dbhandle);
+
+	return 0;	
 }
 
 ?>
