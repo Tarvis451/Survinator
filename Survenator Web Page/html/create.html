@@ -72,10 +72,12 @@ This div is meant to display final form.
          </form> 
 
          <form action="/FreeResponseCreate.html">
+         	<input type="hidden" name="surveyid" value="<?php echo $_GET['surveyid']; ?>">
              <input type="submit" value="Free Response">
          </form>
 
          <form action="MultipleChoiceCreate.html">
+         	<input type="hidden" name="surveyid" value="<?php echo $_GET['surveyid']; ?>">
            <input type="submit" value="Multiple Choice">
          </form>
     <br><br>
