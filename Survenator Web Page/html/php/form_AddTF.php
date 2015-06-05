@@ -1,10 +1,10 @@
 <?php
 	require_once 'addQuestion.php';
 	
-	$surveyid = $_GET['id'];
+	$surveyid = $_GET['sid'];
 	
-	if (isset($_POST['id']))
-		$surveyid = $_POST['id'];
+	if (isset($_POST['sid']))
+		$surveyid = $_POST['sid'];
 	
 	$error = "";
 	$fieldtext = "";
@@ -49,6 +49,6 @@
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 	Question Text: <input type="text" name="text" value="<?php echo $fieldtext; ?>">
 	<input type="submit" name="submit" value="Add Question">
-	<input type="hidden" name="id" value="<?php echo $surveyid; ?>">
+	<input type="hidden" name="sid" value="<?php echo $surveyid; ?>">
 	<br><br><input type="submit" name="cancel" value="Cancel">
 </form>
