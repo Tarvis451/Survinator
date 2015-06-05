@@ -5,6 +5,8 @@
 	
 	if (isset($_POST['sid']))
 		$surveyid = $_POST['sid'];
+		
+	echo $sid;
 	
 	$error = "";
 	$fieldtext = "";
