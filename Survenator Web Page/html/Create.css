@@ -22,7 +22,7 @@ input{
 	
 input[type = submit]{
 	width:100px;
-	background-color: silver;
+	background-color: darkgrey;
 	border-radius:5px;
 	border:2px solid black;
 	color:#fff;
