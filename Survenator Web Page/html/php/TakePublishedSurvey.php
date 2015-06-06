@@ -32,14 +32,16 @@ foreach ($questionlist as $question)
     //Add radio button
     if ($question['QuestionType'] == "TF")
 		echo 
-        "<td>
+            "<td>True/False place holder</td>";
+        
+       /* "<td>
             <input type="radio" name="TF"
             <?php if (isset($TF) && $TF=="T") echo                         "checked";?>
                 value="T">True
                 <input type="radio" name="TF"
                 <?php if (isset($TF) && $TF=="F") echo                       "checked";?>        
                 value="F">False
-        </td>";
+        </td>";*/
 	if ($question['QuestionType'] == "MC")
 		echo "<td>Multiple Choice</td>";
 	if ($question['QuestionType'] == "SA")
