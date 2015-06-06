@@ -40,7 +40,7 @@ This div is for the buttons. When user click on buttons, respective field will a
 
 <div class="two" id="popup" >
 <h4>Options</h4>
-
+    
 	<form action="/TrueFalseCreate.html">
 		<input type="hidden" name="surveyid" value="<?php echo    $_GET['surveyid']; ?>">
          <input type="submit" value="True/False" >
@@ -54,6 +54,13 @@ This div is for the buttons. When user click on buttons, respective field will a
 	 <form action="MultipleChoiceCreate.html">
 		<input type="hidden" name="surveyid" value="<?php echo $_GET['surveyid']; ?>">
 	   <input type="submit" value="Multiple Choice">
+	 </form>
+    
+    <form action="Publish.html?surveyid=<?php echo $_GET['surveyid']; ?>">
+	   <input type="submit" value="Publish Poll">
+	 </form>
+    <form action="MainOptions.html">
+	   <input type="submit" value="Back to Main Menu">
 	 </form>
     
 <a><img  style="padding: 2px 0 0 0; width: 18px;" src="QuestionMark.png" alt="beetle"> <span>TBD</span></a>
@@ -75,14 +82,10 @@ This div is meant to display final form.
     
     <div><p>Title: <b><?php echo $info['SurveyName']; ?></p></b></div>
 	<div><p>Description: <?php echo $info['SurveyDescription']; ?></p></div>
-	<br><br><br>
-	<div><a id="link" href="MainOptions.html"><p>Back to Main Menu</p></a></div>
-	<br><br>
+	<br>
     <br>
 	<?php include 'php/listQuestionsAdd.php'; ?>
 	<br><br><br><br><br><br>
-    <div><a id="link" href="Publish.html?surveyid=<?php echo $_GET['surveyid']; ?>"><p>Publish Poll</p></a></div>
-</div>
     
 </div>
  <!-- 

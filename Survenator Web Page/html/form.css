@@ -6,7 +6,9 @@ body {
 form{
 	width:330px; 
 	
-	margin:10px 180px;
+	/*
+        To fix create.html buttons
+    margin:10px 180px;*/
 	}
 
 button{
