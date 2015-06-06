@@ -3,6 +3,12 @@ include_once 'getQuestions.php';
 $surveyid = $_GET['surveyid'];
 $questionlist = getQuestions($surveyid);
 
+//Using for trouble shooting - Sam
+if($questionlist == 0)
+{
+    echo "empty list";
+}
+
 if ($questionlist != 0)
 {
 
@@ -42,6 +48,8 @@ foreach ($questionlist as $question)
                 <?php if (isset($TF) && $TF=="F") echo                       "checked";?>        
                 value="F">False
         </td>";*/
+    
+    
 	if ($question['QuestionType'] == "MC")
 		echo "<td>Multiple Choice</td>";
 	if ($question['QuestionType'] == "SA")
