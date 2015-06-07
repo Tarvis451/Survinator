@@ -21,7 +21,7 @@ foreach ($questionlist as $question)
 {
 	echo "<tr><td>{$question['QuestionID']}</td>";
 	echo "<td>{$question['QuestionText']}</td>";
-	if ($question['QuestionType'] == "TF"){
+	/*if ($question['QuestionType'] == "TF"){
         echo "<td>
             <textarea rows="1" cols="5"></textarea>
         </td>";
@@ -36,7 +36,8 @@ foreach ($questionlist as $question)
         echo "<td>
                <textarea rows="4" cols="50"></textarea>
         </td>";
-    }
+    }*/
+    echo"<td><textarea></textarea></td>"
     
     echo "</tr>";
    
