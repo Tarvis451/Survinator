@@ -76,10 +76,10 @@ function validateInputs($responses)
 	if (count($responses) < 2)
 		return -205;
 
-	for each ($responses as $response)
+	foreach ($responses as $response)
 	{
 		if (strlen($response) < 1)
-			return -205
+			return -205;
 	}
 	
 	//input is fine
