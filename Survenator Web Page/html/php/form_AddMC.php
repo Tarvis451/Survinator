@@ -17,7 +17,7 @@
 	{
 		if (isset($_POST['delete[$i]']))
 		{
-			array_splice($responses, $i, 1);
+			array_splice($responses, $d, 1);
 			$numresponses--;
 			break;
 		}
@@ -81,7 +81,7 @@
 		for ($i = 0; $i < $numresponses; $i++)
 		{ ?>
 			<input type="text" name="responses[]" value="<?php echo $responses[$i]; ?>">
-			<input type="submit" name="delete[$i]" value="(-)">
+			<input type="submit" name="delete[<?php echo $i;?>]" value="(-)">
 		<?php } 
 	
 	?>
