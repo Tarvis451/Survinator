@@ -22,22 +22,26 @@ foreach ($questionlist as $question)
 	echo "<tr><td>{$question['QuestionID']}</td>";
 	echo "<td>{$question['QuestionText']}</td>";
     
-    if ($question['QuestionType'] == "TF")
-		echo "<td>
+    if ($question['QuestionType'] == "TF"){ ?>
+        <td>
             <form>
             <input type="radio" name="sex" value="T"                         checked>True
             <br>
             <input type="radio" name="sex" value="F">False
             </form>
-        </td>";
+        </td><?php
+    }    
+        
 	if ($question['QuestionType'] == "MC")
 		echo "<td>Coming Soon</td>";
-	if ($question['QuestionType'] == "SA")
-		echo "<td>
+	if ($question['QuestionType'] == "SA") { ?>
+        <td>
             <form>
                 <textarea rows="4" cols="40"></textarea>
             </form>
-        </td>";
+        </td> <?php
+    }
+    
 	echo "</tr>";
     
    // echo"<td><input type="text" name="firstname"></td>"
