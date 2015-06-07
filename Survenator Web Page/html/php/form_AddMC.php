@@ -80,8 +80,8 @@
 	<?php
 		for ($i = 0; $i < $numresponses; $i++)
 		{ ?>
-			<input type="text" name="responses[]" value="<?php echo $responses[$i]; ?>">
-			<input type="submit" name="delete[$i]" value="(-)">
+			<div><input type="text" name="responses[]" value="<?php echo $responses[$i]; ?>">
+			<input style="width:5" type="submit" name="delete[$i]" value="(-)"></div>
 		<?php } 
 	
 	?>
