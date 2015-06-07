@@ -2,7 +2,7 @@
 
 include_once 'php/createsurvey.php';
 
-publishSurvey($_GET['surveyid']);
+publishSurvey($_POST['surveyid']);
 
 ?>
 
@@ -62,7 +62,7 @@ This div is meant to display final form.
     
       include_once 'php/getSurveyInfo.php';
     
-      $info = getSurveyInfo($_GET['surveyid']);
+      $info = getSurveyInfo($_POST['surveyid']);
     
     ?>
     

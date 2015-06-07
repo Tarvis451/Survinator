@@ -42,7 +42,7 @@ This div is for the buttons. When user click on buttons, respective field will a
 <h4>Options</h4>
     
 	<form action="/TrueFalseCreate.html">
-		<input type="hidden" name="surveyid" value="<?php echo    $_GET['surveyid']; ?>">
+		<input type="hidden" name="surveyid" value="<?php echo $_GET['surveyid']; ?>">
          <input type="submit" value="True/False" >
     </form> 
 
@@ -57,6 +57,7 @@ This div is for the buttons. When user click on buttons, respective field will a
 	 </form>
     
     <form action="Publish.html?surveyid=<?php echo $_GET['surveyid']; ?>">
+		<input type="hidden" name="surveyid" value="<?php echo $_GET['surveyid']; ?>">
 	   <input type="submit" value="Publish Poll">
 	 </form>
     <form action="MainOptions.html">
