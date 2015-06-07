@@ -10,13 +10,25 @@
 		$numresponses = (int)$_POST['numresponses'];
 	else
 		$numresponses = 4;
-		
+	
+	$responses = $_POST['responses'];
+	
+	for ($d = 0; $d < $numresponses; $d}})
+	{
+		if (isset($_POST['delete[$i]']))
+		{
+			array_splice($responses, $i, 1);
+			$numresponses--;
+			break;
+		}
+	}
+	
 	if (isset($_POST['addresponse']))
 		$numresponses++;
 	
 	$error = "";
 	$text = $_POST['text'];
-	$responses = $_POST['responses'];
+	
 		
 	$fieldtext = $text;
 	
@@ -69,6 +81,7 @@
 		for ($i = 0; $i < $numresponses; $i++)
 		{ ?>
 			<input type="text" name="responses[]" value="<?php echo $responses[$i]; ?>">
+			<input type="submit" name="delete[$i]" value="(-)">
 		<?php } 
 	
 	?>
