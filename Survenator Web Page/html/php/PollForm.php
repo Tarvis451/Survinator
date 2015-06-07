@@ -10,9 +10,9 @@ title, form {
 //Create an overall form using the same syntax as the conditionals
 
 
-
-
 include_once 'getQuestions.php';
+include_once 'MultipleChoicePrint.php';     //script to print multiple choice options
+
 $surveyid = $_GET['surveyid'];
 $questionlist = getQuestions($surveyid);
 
@@ -38,7 +38,7 @@ foreach ($questionlist as $question)
     if ($question['QuestionType'] == "TF"){ ?>
         <td>
             <form style="">
-            <input type="radio" name="sex" value="T"                         checked>True
+            <input type="radio" name="sex" value="T" checked>True
             <br>
             <input type="radio" name="sex" value="F">False
             </form>
@@ -46,7 +46,8 @@ foreach ($questionlist as $question)
     }    
         
 	if ($question['QuestionType'] == "MC")
-		echo "<td>Coming Soon</td>";
+		//run script
+    
 	if ($question['QuestionType'] == "SA") { ?>
         <td>
             <form>
