@@ -37,13 +37,13 @@ foreach ($questionlist as $question)
                <textarea rows="4" cols="50"></textarea>
         </td>";
     }*/
-    echo"<td><textarea></textarea></td>"
+    echo"<td><input type="text" name="test"></td>"
     
     echo "</tr>";
    
 }
     
-    echo "<input type="submit" name="submit">";
+   // echo "<input type="submit" name="submit">";
 
 </table> 
 
