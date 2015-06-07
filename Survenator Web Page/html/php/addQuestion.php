@@ -71,6 +71,21 @@ function validateInputs($intext, $insurveyid)
 	return 1;
 }
 
+function validateInputs($responses)
+{
+	if (count($responses) < 2)
+		return -205;
+
+	for each ($responses as $response)
+	{
+		if (strlen($response) < 1)
+			return -205
+	}
+	
+	//input is fine
+	return 1;
+}
+
 function addQuestionTF($intext, $insurveyid)
 {
 	$dbhandle = db_connect();
@@ -118,6 +133,41 @@ function addQuestionSA($intext, $insurveyid)
 	//info looks good, add to db
 	$query = "INSERT INTO Surveys(SurveyID, QuestionID, QuestionType, QuestionText, ResponseID) VALUES ({$surveyid}, {$questionid}, 'SA', '{$text}', 1)";
 	$result = mysql_query($query);
+
+	db_close($dbhandle);
+
+	return 0;	
+}
+
+function addQuestionMC($intext, $insurveyid,$inresponses)
+{
+	$dbhandle = db_connect();
+	session_start();
+
+	$text = mysql_real_escape_string($intext);
+	$surveyid = mysql_real_escape_string($insurveyid);
+	$responses = $inresponses;
+	array_walk_recursive( $responses, 'mysql_real_escape_string' );
+	
+	$valid = validateInputs($text, $surveyid);
+	$validresponses = validateResponses($responses);
+	
+	if ($valid != 1)
+		return $valid;
+		
+	if ($validresponses != 1)
+		return $validresponses;
+	
+	$questionid = getNewQuestionID($surveyid);
+	$responseid = 1;
+
+	//info looks good, add to db
+	for each ($responses as $response)
+	{
+		$query = "INSERT INTO Surveys(SurveyID, QuestionID, QuestionType, QuestionText, ResponseID, ResponseText) VALUES ({$surveyid}, {$questionid}, 'MC', '{$text}', $responseid, '{$response}')";
+		$result = mysql_query($query);
+		responseid++;
+	}
 
 	db_close($dbhandle);
 
