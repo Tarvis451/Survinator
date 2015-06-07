@@ -12,10 +12,11 @@
 		$numresponses = 4;
 	
 	$responses = $_POST['responses'];
+	$delete = $_POST['delete'];
 	
 	for ($d = 0; $d < $numresponses; $d++)
 	{
-		if (isset($_POST['delete[$i]']))
+		if (isset($delete[$i]))
 		{
 			array_splice($responses, $d, 1);
 			$numresponses--;
