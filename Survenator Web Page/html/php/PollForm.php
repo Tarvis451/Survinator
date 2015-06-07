@@ -50,12 +50,13 @@ foreach ($questionlist as $question)
     
    // echo "<input type="submit" name="submit">";
     ?>  
-    <input type="submit" name="submit">
+    
     
     <?php
 ?>
 </table> 
 
+<input type="submit" name="submit">
 
 <?php 
 
