@@ -16,7 +16,7 @@
 	
 	for ($d = 0; $d < $numresponses; $d++)
 	{
-		if (isset($delete[$i]))
+		if (isset($delete[$d]))
 		{
 			array_splice($responses, $d, 1);
 			$numresponses--;
