@@ -66,7 +66,7 @@
 		for ($i = 0; $i < $numresponses; $i++)
 		{ ?>
 			<input type="text" name="$responses[]" value="<?php echo $responses[$i]; ?>">
-		} <?php 
+		<?php } 
 	
 	?>
 	<input type="submit" name="addresponse" value="Add Response">
