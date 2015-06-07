@@ -1,4 +1,17 @@
-<?php 
+<style>
+
+title, form {
+  width: 100%;
+  text-align: center;
+}
+</style>
+
+<?php
+//Create an overall form using the same syntax as the conditionals
+
+
+
+
 include_once 'getQuestions.php';
 $surveyid = $_GET['surveyid'];
 $questionlist = getQuestions($surveyid);
@@ -24,7 +37,7 @@ foreach ($questionlist as $question)
     
     if ($question['QuestionType'] == "TF"){ ?>
         <td>
-            <form>
+            <form style="">
             <input type="radio" name="sex" value="T"                         checked>True
             <br>
             <input type="radio" name="sex" value="F">False
