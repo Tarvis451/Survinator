@@ -15,7 +15,10 @@
 		$numresponses++;
 	
 	$error = "";
-	$fieldtext = "";
+	$text = $_POST['text'];
+	$responses = $_POST['responses'];
+		
+	$fieldtext = $text;
 	
 	if (isset($_POST['cancel']))
 	{
