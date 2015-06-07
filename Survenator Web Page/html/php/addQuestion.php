@@ -71,7 +71,7 @@ function validateInputs($intext, $insurveyid)
 	return 1;
 }
 
-function validateInputs($responses)
+function validateResponses($responses)
 {
 	if (count($responses) < 2)
 		return -205;
