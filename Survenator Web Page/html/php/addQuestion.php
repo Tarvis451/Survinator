@@ -162,7 +162,7 @@ function addQuestionMC($intext, $insurveyid,$inresponses)
 	$responseid = 1;
 
 	//info looks good, add to db
-	for each ($responses as $response)
+	foreach ($responses as $response)
 	{
 		$query = "INSERT INTO Surveys(SurveyID, QuestionID, QuestionType, QuestionText, ResponseID, ResponseText) VALUES ({$surveyid}, {$questionid}, 'MC', '{$text}', $responseid, '{$response}')";
 		$result = mysql_query($query);
