@@ -166,7 +166,7 @@ function addQuestionMC($intext, $insurveyid,$inresponses)
 	{
 		$query = "INSERT INTO Surveys(SurveyID, QuestionID, QuestionType, QuestionText, ResponseID, ResponseText) VALUES ({$surveyid}, {$questionid}, 'MC', '{$text}', $responseid, '{$response}')";
 		$result = mysql_query($query);
-		responseid++;
+		$responseid++;
 	}
 
 	db_close($dbhandle);
