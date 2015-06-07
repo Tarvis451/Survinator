@@ -13,7 +13,7 @@
 	
 	$responses = $_POST['responses'];
 	
-	for ($d = 0; $d < $numresponses; $d}})
+	for ($d = 0; $d < $numresponses; $d++)
 	{
 		if (isset($_POST['delete[$i]']))
 		{
