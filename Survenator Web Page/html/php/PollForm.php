@@ -21,25 +21,16 @@ foreach ($questionlist as $question)
 {
 	echo "<tr><td>{$question['QuestionID']}</td>";
 	echo "<td>{$question['QuestionText']}</td>";
-	/*if ($question['QuestionType'] == "TF"){
-        echo "<td>
-            <textarea rows="1" cols="5"></textarea>
-        </td>";
-		
-	if ($question['QuestionType'] == "MC") {
-        echo "<td>
-            <p>Coming soon</p>
-        </td>";
-    }
-		
-	if ($question['QuestionType'] == "SA") {
-        echo "<td>
-               <textarea rows="4" cols="50"></textarea>
-        </td>";
-    }*/
-    echo"<td><input type="text" name="test"></td>"
     
-    echo "</tr>";
+    if ($question['QuestionType'] == "TF")
+		echo "<td>True/False</td>";
+	if ($question['QuestionType'] == "MC")
+		echo "<td>Multiple Choice<br><br></td>";
+	if ($question['QuestionType'] == "SA")
+		echo "<td>Free Response</td>";
+	echo "</tr>";
+    
+   // echo"<td><input type="text" name="firstname"></td>"
    
 }
     
