@@ -77,17 +77,17 @@ This div is meant to display final form.
 	$info = getSurveyInfo($_GET['surveyid']);
 	?>
     
-    <div><p style="margin: 0 0 0 15px">Title: <b><?php echo $info['SurveyName']; ?></p></b></div>5
+    <div><p style="margin: 0 0 0 15px">Title: <b><?php echo $info['SurveyName']; ?></p></b></div>
 	<div><p style="margin: 0 0 0 15px">Description: <?php echo $info['SurveyDescription']; ?></p></div>
 	<br>
     <br>
-	<?php include 'php/listQuestionsAdd.php'; ?>
+	<?php include 'php/listQuestionsNoLinks.php'; ?>
 	<br><br><br><br><br><br>
     
     <!-- Will link to results page with bar graphs
             and wil be updated in real time via
             AJAX -->
-    <a href="#">Results</a>
+    <a href="#" style="margin:0 20px 0">Results</a>
     
     <!-- Will take you to a page to take the survey -->
     <a href="#">Take Survey</a>
