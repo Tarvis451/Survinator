@@ -2,7 +2,6 @@
 include_once 'getQuestions.php';
 $surveyid = $_GET['surveyid'];
 $questionlist = getQuestions($surveyid);
-$counter = 1; //used to differentiate between tf radio buttons
 
 if ($questionlist != 0)
 {
@@ -24,10 +23,8 @@ foreach ($questionlist as $question)
 	echo "<td>{$question['QuestionText']}</td>";
 	if ($question['QuestionType'] == "TF"){
         echo "<td>
-            <textarea rows="1" cols="5" required></textarea>
+            <textarea rows="1" cols="5"></textarea>
         </td>";
-         $counter = $counter + 1;
-    }
 		
 	if ($question['QuestionType'] == "MC") {
         echo "<td>
@@ -37,11 +34,9 @@ foreach ($questionlist as $question)
 		
 	if ($question['QuestionType'] == "SA") {
         echo "<td>
-               <textarea rows="4" cols="50" required></textarea>
+               <textarea rows="4" cols="50"></textarea>
         </td>";
     }
-		
-	
     
     echo "</tr>";
    
