@@ -35,8 +35,9 @@ foreach ($questionlist as $question)
 }
     
    // echo "<input type="submit" name="submit">";
-
+?>
 </table> 
+
 
 <?php 
 
