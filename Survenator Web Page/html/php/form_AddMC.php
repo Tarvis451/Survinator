@@ -1,17 +1,25 @@
 <?php
 	require_once 'addQuestion.php';
 	
+	//Get the Survey ID
 	$surveyid = $_GET['surveyid'];
 	
 	if (isset($_POST['surveyid']))
 		$surveyid = $_POST['surveyid'];
-		
+	
+	//Get the number of responses,
 	if (isset($_POST['numresponses']))
 		$numresponses = (int)$_POST['numresponses'];
-	else
+	else //set default as 4 responses
 		$numresponses = 4;
 	
+	//Remember the text when adding/removing entries
+	$text = $_POST['text'];
+	$fieldtext = $text;
+	
 	$responses = $_POST['responses'];
+	
+	//If a delete button was pressed, delete the corresponding result
 	$delete = $_POST['delete'];
 	
 	for ($d = 0; $d < $numresponses; $d++)
@@ -24,14 +32,11 @@
 		}
 	}
 	
+	//if the add response button was pressed, update the number of responses
 	if (isset($_POST['addresponse']))
 		$numresponses++;
 	
 	$error = "";
-	$text = $_POST['text'];
-	
-		
-	$fieldtext = $text;
 	
 	if (isset($_POST['cancel']))
 	{
@@ -39,6 +44,7 @@
 		die("Canceled adding question");
 	}
 	
+	//Submit the form for adding to database
 	if (isset($_POST['submit']))
 	{
 		$text = $_POST['text'];
@@ -47,6 +53,7 @@
 		
 		$ret = addQuestionMC($text,$surveyid,$responses);
 		
+		//error cases
 		if ($ret == -1)
 			$error = "Survey id#{$surveyid} does not belong to you!";
 		
@@ -63,8 +70,9 @@
 			$error = "Database error";
 			
 		if ($ret == -205)
-			$error = "You need at least two responses with at least 1 character";
+			$error = "You need at least two responses, each with at least 1 character";
 		
+		//add was successful
 		if ($ret >= 0)
 		{
 			header("Location: /create.html?surveyid={$surveyid}");
@@ -78,7 +86,7 @@
 	Question Text: <input type="text" name="text" value="<?php echo $fieldtext; ?>">
 	Responses:
 	<input type="hidden" name="numresponses" value="<?php echo $numresponses; ?>">
-	<?php
+	<?php //dynamically add response boxes
 		for ($i = 0; $i < $numresponses; $i++)
 		{ ?>
 			<div><input type="text" name="responses[]" value="<?php echo $responses[$i]; ?>">

@@ -71,15 +71,15 @@ function validateInputs($intext, $insurveyid)
 	return 1;
 }
 
-function validateInputs($responses)
+function validateResponses($responses)
 {
 	if (count($responses) < 2)
 		return -205;
 
-	for each ($responses as $response)
+	foreach ($responses as $response)
 	{
 		if (strlen($response) < 1)
-			return -205
+			return -205;
 	}
 	
 	//input is fine
@@ -162,11 +162,11 @@ function addQuestionMC($intext, $insurveyid,$inresponses)
 	$responseid = 1;
 
 	//info looks good, add to db
-	for each ($responses as $response)
+	foreach ($responses as $response)
 	{
 		$query = "INSERT INTO Surveys(SurveyID, QuestionID, QuestionType, QuestionText, ResponseID, ResponseText) VALUES ({$surveyid}, {$questionid}, 'MC', '{$text}', $responseid, '{$response}')";
 		$result = mysql_query($query);
-		responseid++;
+		$responseid++;
 	}
 
 	db_close($dbhandle);
