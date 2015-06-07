@@ -13,20 +13,17 @@ if ($questionlist != 0)
 	<tr>
 		<th>Question #</th>
 		<th>Question</th>
+        <th>Input</th>
 	</tr>
 	
 <?php
     
-//start form
-echo "<form>";
-    
 foreach ($questionlist as $question)
 {
 	echo "<tr><td>{$question['QuestionID']}</td>";
-	//echo "<td>{$question['QuestionText']}</td>";
+	echo "<td>{$question['QuestionText']}</td>";
 	if ($question['QuestionType'] == "TF"){
         echo "<td>
-            {$question['QuestionText']}<br>
             <textarea rows="1" cols="5" required></textarea>
         </td>";
          $counter = $counter + 1;
@@ -34,14 +31,12 @@ foreach ($questionlist as $question)
 		
 	if ($question['QuestionType'] == "MC") {
         echo "<td>
-            {$question['QuestionText']}<br>
             <p>Coming soon</p>
         </td>";
     }
 		
 	if ($question['QuestionType'] == "SA") {
         echo "<td>
-             {$question['QuestionText']}<br>
                <textarea rows="4" cols="50" required></textarea>
         </td>";
     }
@@ -51,10 +46,8 @@ foreach ($questionlist as $question)
     echo "</tr>";
    
 }
-    //end form
+    
     echo "<input type="submit" name="submit">";
-    echo "</form>";
-?>
 
 </table> 
 
