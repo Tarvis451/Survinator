@@ -64,9 +64,9 @@
 	<input type="hidden" name="numresponses" value="<?php echo $numresponses; ?>">
 	<?php
 		for ($i = 0; $i < $numresponses; $i++)
-		{
+		{ ?>
 			echo '<input type="text" name="$responses[]" value="<?php echo $responses[$i]; ?>">';
-		}
+		} <?php 
 	
 	?>
 	<input type="submit" name="addresponse" value="Add Response">
