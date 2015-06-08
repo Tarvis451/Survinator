@@ -30,7 +30,7 @@ if (isset($_POST['cancel']))
 if (isset($_POST['submit']))
 {
 	$responses = $_POST['responses'];
-	for each ($responses as $questionid => $response)
+	foreach ($responses as $questionid => $response)
 	{
 		submitResponse($surveyid, $questionid, $response);
 	}
