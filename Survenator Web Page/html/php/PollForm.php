@@ -52,21 +52,22 @@ foreach ($questionlist as $question)
 	
 	$questionid = $question['QuestionID'];
     
-    if ($question['QuestionType'] == "TF")
-    { ?>
-        <td>
-            <form style="">
-            <input type="radio" name="response[<?php echo $questionid; ?>]" value="1">A: True
-            <br>
-            <input type="radio" name="response[<?php echo $questionid; ?>]" value="2">B: False
-        </td><?php
-    }    
+	if ($question['QuestionType'] == "TF")
+	{ ?>
+		<td>
+		<form style="">
+		<input type="radio" name="response[<?php echo $questionid; ?>]" value="1">A: True
+		<br>
+		<input type="radio" name="response[<?php echo $questionid; ?>]" value="2">B: False
+		</td><?php
+	}    
         
 	if ($question['QuestionType'] == "MC")
 	{
 		$responses = getResponses($surveyid, $questionid);
 		if ($responses == 0)
 			echo 'Couldnt get responses!!';
+			
 		echo '<td>';
 		foreach ($responses as $response)
 		{ 
@@ -81,10 +82,10 @@ foreach ($questionlist as $question)
     
 	if ($question['QuestionType'] == "SA") 
 	{ ?>
-        	<td>
-                	<textarea name="response[<?php echo $questionid; ?>]" rows="4" cols="40"></textarea>
+		<td>
+                <textarea name="response[<?php echo $questionid; ?>]" rows="4" cols="40"></textarea>
 		</td><?php
-    	}
+	}
     
 	echo "</tr>";
     
