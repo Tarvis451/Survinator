@@ -62,15 +62,16 @@ foreach ($questionlist as $question)
 	if ($question['QuestionType'] == "MC")
 	{
 		$responses = getResponses($surveyid, $questionid);
-		echo $responses;
 		$responseid = $responses['ResponseID'];
 		$responsetext = $responses['ResponseText'];
+		echo '<td>';
 		foreach ($responses as $response)
 		{ ?>
-			<td>
+			
 			<input type="radio" name="response[<?php echo $questionid; ?>]" value="<?php echo $responseid; ?>"><?php echo $responsetext; ?><br>
-			</td><?php 
+			<?php 
 		}
+		echo '</td>';
 	}
     
 	if ($question['QuestionType'] == "SA") 
