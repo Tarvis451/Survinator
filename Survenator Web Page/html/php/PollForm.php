@@ -15,6 +15,9 @@ require_once 'getQuestions.php';
 
 
 $surveyid = $_GET['surveyid'];
+if (isset($_POST['surveyid']))
+	$surveyid = $_POST['surveyid'];
+	
 $questionlist = getQuestions($surveyid);
 
 if (isset($_POST['cancel']))
