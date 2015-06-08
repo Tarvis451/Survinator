@@ -32,6 +32,7 @@ if (isset($_POST['submit']))
 	$responses = $_POST['responses'];
 	foreach ($responses as $questionid => $response)
 	{
+		echo "Submitting {$response} to {$surveyid} q{$questionid}";
 		submitResponse($surveyid, $questionid, $response);
 	}
 	die("User submitted survey");
