@@ -33,7 +33,7 @@ function submitResponse($surveyid, $questionid, $response)
 	//We might bar it or simply overwrite the old response
 	
 	//all is well, add it to DB
-	$query = "INSERT INTO Responses(SurveyID, QuestionID, Response, UserID) VALUES ({$surveyid}, {$questionid}, {$response}, {$userid})";
+	$query = "INSERT INTO Responses(SurveyID, QuestionID, Response, UserID) VALUES ({$surveyid}, {$questionid}, '{$response}', {$userid})";
 	$result = mysql_query($query);
 	
 	//close db and return
