@@ -61,6 +61,7 @@ foreach ($questionlist as $question)
         
 	if ($question['QuestionType'] == "MC")
 	{
+		echo "Requesting responses for {$surveyid} q{$questionid}";
 		$responses = getResponses($surveyid, $questionid);
 		$responseid = $responses['ResponseID'];
 		$responsetext = $responses['ResponseText'];
@@ -89,7 +90,7 @@ foreach ($questionlist as $question)
 </table> 
 <input type="submit" name="submit" value="Submit Survey">
 <input type="submit" name="cancel" value="Cancel">
-<input type="hidden" name="surveyid" value="<?php echo $surveyid; ?>"
+<input type="hidden" name="surveyid" value="<?php echo $surveyid; ?>">
 </form>
 
 <?php 
