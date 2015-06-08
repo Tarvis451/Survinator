@@ -43,7 +43,7 @@ function submitResponse($surveyid, $questionid, $response)
 }
 
 //check if question actually exists
-checkForQuestion($surveyid, $questionid)
+function checkForQuestion($surveyid, $questionid)
 {
 	$query = "SELECT * FROM Surveys WHERE SurveyID={$surveyid} AND QuestionID={$questionid}";
 	$result = mysql_query($query);
