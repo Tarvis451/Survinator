@@ -67,8 +67,8 @@ foreach ($questionlist as $question)
 		echo '<td>';
 		foreach ($responses as $response)
 		{ 
-			$responseid = $responses['ResponseID'];
-			$responsetext = $responses['ResponseText'];
+			$responseid = $response['ResponseID'];
+			$responsetext = $response['ResponseText'];
 			?>
 			<input type="radio" name="response[<?php echo $questionid; ?>]" value="<?php echo $responseid; ?>"><?php echo $responsetext; ?><br>
 			<?php 
