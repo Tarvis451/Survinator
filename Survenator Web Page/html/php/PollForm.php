@@ -10,11 +10,23 @@ title, form {
 //Create an overall form using the same syntax as the conditionals
 
 
-include_once 'getQuestions.php';
-include_once 'MultipleChoicePrint.php';     //script to print multiple choice options
+require_once 'getQuestions.php';
+//require_once 'submitResponse.php';
+
 
 $surveyid = $_GET['surveyid'];
 $questionlist = getQuestions($surveyid);
+
+if (isset ($_POST['cancel']))
+{
+	//exit and go back
+}
+
+if (isset ($_POST['submit']))
+{
+	//submit the survey
+}
+
 
 if ($questionlist != 0)
 {
@@ -27,50 +39,56 @@ if ($questionlist != 0)
 		<th>Question</th>
         <th>Input</th>
 	</tr>
-	
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 <?php
-    
+   
 foreach ($questionlist as $question)
 {
 	echo "<tr><td>{$question['QuestionID']}</td>";
 	echo "<td>{$question['QuestionText']}</td>";
+	
+	$questionid = $question['QuestionID'];
     
-    if ($question['QuestionType'] == "TF"){ ?>
+    if ($question['QuestionType'] == "TF")
+    { ?>
         <td>
             <form style="">
-            <input type="radio" name="sex" value="T" checked>True
+            <input type="radio" name="response[<?php echo $questionid; ?>]" value="1">A: True
             <br>
-            <input type="radio" name="sex" value="F">False
-            </form>
+            <input type="radio" name="response[<?php echo $questionid; ?>]" value="2">B: False
         </td><?php
     }    
         
 	if ($question['QuestionType'] == "MC")
-		//run script
+	{
+		$responses = getResponses($surveyid, $questionid);
+		$responseid = $responses['ResponseID'];
+		$responsetext = $responses['ResponseText'];
+		for each ($responses as $response)
+		{ ?>
+			<td>
+			<input type="radio" name="response[<?php echo $questionid; ?>]" value="<?php echo $responseid; ?>"><?php echo $responsetext; ?>
+			</td><?php 
+		}
+	}
     
-	if ($question['QuestionType'] == "SA") { ?>
-        <td>
-            <form>
-                <textarea rows="4" cols="40"></textarea>
-            </form>
-        </td> <?php
-    }
+	if ($question['QuestionType'] == "SA") 
+	{ ?>
+        	<td>
+                	<textarea name="response[<?php echo $questionid; ?>]" rows="4" cols="40"></textarea>
+		</td><?php
+    	}
     
 	echo "</tr>";
     
-   // echo"<td><input type="text" name="firstname"></td>"
-   
-}
-    
-   // echo "<input type="submit" name="submit">";
-    ?>  
-    
-    
-    <?php
-?>
-</table> 
 
-<input type="submit" name="submit">
+} ?>
+    
+</table> 
+<input type="submit" name="submit" value="Submit Survey">
+<input type="submit" name="cancel" value="Cancel">
+<input type="hidden" name="surveyid" value="<?php echo $surveyid; ?>"
+</form>
 
 <?php 
 
