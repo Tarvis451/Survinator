@@ -62,6 +62,8 @@ foreach ($questionlist as $question)
 	if ($question['QuestionType'] == "MC")
 	{
 		$responses = getResponses($surveyid, $questionid);
+		if ($responses == 0)
+			echo 'Couldnt get responses!!';
 		$responseid = $responses['ResponseID'];
 		$responsetext = $responses['ResponseText'];
 		echo '<td>';
