@@ -3,7 +3,7 @@
 include_once 'php/createsurvey.php';
 $surveyid = $_GET['surveyid'];
 
-if (isset($_POST['surveyid'])
+if (isset($_POST['surveyid']))
 	$surveyid = $_POST['surveyid'];
 	
 publishSurvey($surveyid);
