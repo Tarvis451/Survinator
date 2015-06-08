@@ -6,6 +6,8 @@ function getQuestions($surveyid)
 	include_once 'dbconnect.php';
 	$dbhandle = db_connect();
 	
+	$surveyid = mysql_get_real_escape_string($surveyid);
+	
 	//get DB query
 	$query = "SELECT DISTINCT QuestionID, QuestionText, QuestionType from Surveys WHERE SurveyID={$surveyid}";
 	$result = mysql_query($query);
