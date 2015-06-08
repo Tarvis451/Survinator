@@ -11,7 +11,7 @@ title, form {
 
 
 require_once 'getQuestions.php';
-//require_once 'submitResponse.php';
+require_once 'submitResponse.php';
 
 
 $surveyid = $_GET['surveyid'];
@@ -20,14 +20,21 @@ if (isset($_POST['surveyid']))
 	
 $questionlist = getQuestions($surveyid);
 
+//cancel button, exit and go back
 if (isset($_POST['cancel']))
 {
-	//exit and go back
+	die("User canceled survey");
 }
 
+//submit button, submit the responses
 if (isset($_POST['submit']))
 {
-	//submit the survey
+	$responses = $_POST('responses');
+	for each ($responses as $questionid => $response)
+	{
+		submitResponse($surveyid, $questionid, $response);
+	}
+	die("User submitted survey");
 }
 
 
@@ -56,9 +63,9 @@ foreach ($questionlist as $question)
 	{ ?>
 		<td>
 		<form style="">
-		<input type="radio" name="response[<?php echo $questionid; ?>]" value="1">A: True
+		<input type="radio" name="responses[<?php echo $questionid; ?>]" value="1">A: True
 		<br>
-		<input type="radio" name="response[<?php echo $questionid; ?>]" value="2">B: False
+		<input type="radio" name="responses[<?php echo $questionid; ?>]" value="2">B: False
 		</td><?php
 	}    
         
@@ -74,7 +81,7 @@ foreach ($questionlist as $question)
 			$responseid = $response['ResponseID'];
 			$responsetext = $response['ResponseText'];
 			?>
-			<input type="radio" name="response[<?php echo $questionid; ?>]" value="<?php echo $responseid; ?>"><?php echo $responsetext; ?><br>
+			<input type="radio" name="responses[<?php echo $questionid; ?>]" value="<?php echo $responseid; ?>"><?php echo $responsetext; ?><br>
 			<?php 
 		}
 		echo '</td>';
@@ -83,7 +90,7 @@ foreach ($questionlist as $question)
 	if ($question['QuestionType'] == "SA") 
 	{ ?>
 		<td>
-                <textarea name="response[<?php echo $questionid; ?>]" rows="4" cols="40"></textarea>
+                <textarea name="responses[<?php echo $questionid; ?>]" rows="4" cols="40"></textarea>
 		</td><?php
 	}
     
