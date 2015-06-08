@@ -64,12 +64,12 @@ foreach ($questionlist as $question)
 		$responses = getResponses($surveyid, $questionid);
 		if ($responses == 0)
 			echo 'Couldnt get responses!!';
-		$responseid = $responses['ResponseID'];
-		$responsetext = $responses['ResponseText'];
 		echo '<td>';
 		foreach ($responses as $response)
-		{ ?>
-			
+		{ 
+			$responseid = $responses['ResponseID'];
+			$responsetext = $responses['ResponseText'];
+			?>
 			<input type="radio" name="response[<?php echo $questionid; ?>]" value="<?php echo $responseid; ?>"><?php echo $responsetext; ?><br>
 			<?php 
 		}
