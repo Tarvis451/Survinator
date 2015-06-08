@@ -61,7 +61,6 @@ foreach ($questionlist as $question)
         
 	if ($question['QuestionType'] == "MC")
 	{
-		echo "Requesting responses for {$surveyid} q{$questionid}";
 		$responses = getResponses($surveyid, $questionid);
 		$responseid = $responses['ResponseID'];
 		$responsetext = $responses['ResponseText'];
