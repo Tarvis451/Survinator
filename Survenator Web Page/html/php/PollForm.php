@@ -29,7 +29,7 @@ if (isset($_POST['cancel']))
 //submit button, submit the responses
 if (isset($_POST['submit']))
 {
-	$responses = $_POST('responses');
+	$responses = $_POST['responses'];
 	for each ($responses as $questionid => $response)
 	{
 		submitResponse($surveyid, $questionid, $response);
