@@ -33,7 +33,11 @@ if (isset($_POST['submit']))
 	foreach ($responses as $questionid => $response)
 	{
 		echo "Submitting {$response} to {$surveyid} q{$questionid}";
-		submitResponse($surveyid, $questionid, $response);
+		$res = submitResponse($surveyid, $questionid, $response);
+		if ($res == -1)
+			echo 'Problem -1';
+		if ($res == -301)
+			echo 'Problem -301';
 	}
 	die("User submitted survey");
 }
