@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/questionTitles"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_toLeftOf="@+id/button18"
+        android:layout_toStartOf="@+id/button18" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Question"
+        android:id="@+id/button18"
+        android:layout_gravity="center_vertical"
+        android:onClick="questionType"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/button19"
+        android:layout_marginTop="102dp"
+        android:layout_below="@+id/button18"
+        android:layout_alignRight="@+id/button18"
+        android:layout_alignEnd="@+id/button18"
+        android:layout_toRightOf="@+id/questionTitles"
+        android:layout_toEndOf="@+id/questionTitles"
+        android:onClick="saveSurvey" />
+</RelativeLayout>

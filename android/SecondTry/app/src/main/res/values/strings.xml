@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">SecondTry</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_create_survey">Create Survey</string>
+    <string name="title_view_survey">View Surveys</string>
+    <string name="title_activity_question_type">Question Type</string>
+    <string name="title_activity_true_false">TrueFalseActivity</string>
+    <string name="title_activity_multiple_choice">MultipleChoiceActivity</string>
+    <string name="title_activity_free_response">FreeResponseActivity</string>
+    <string name="title_activity_question_title">QuestionTitleActivity</string>
+    <string name="title_activity_login_custom">LoginCustomActivity</string>
+    <string name="title_activity_main_menu">MainMenuActivity</string>
+    <string name="title_activity_survey_title">SurveyTitleActivity</string>
+    <string name="enter_question_text">Enter the question as it should appear to users.</string>
+    <string name="enter_response_text">Enter the response as it should appear to users.</string>
+    <string name="enter_survey_title_text">Enter the name of your survey.</string>
+    <string name="title_activity_view_survey">ViewSurveyActivity</string>
+    <string name="title_activity_take_survey">TakeSurveyActivity</string>
+</resources>
