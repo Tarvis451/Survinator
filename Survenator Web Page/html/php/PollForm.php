@@ -17,12 +17,12 @@ require_once 'getQuestions.php';
 $surveyid = $_GET['surveyid'];
 $questionlist = getQuestions($surveyid);
 
-if (isset ($_POST['cancel']))
+if (isset($_POST['cancel']))
 {
 	//exit and go back
 }
 
-if (isset ($_POST['submit']))
+if (isset($_POST['submit']))
 {
 	//submit the survey
 }
@@ -64,7 +64,7 @@ foreach ($questionlist as $question)
 		$responses = getResponses($surveyid, $questionid);
 		$responseid = $responses['ResponseID'];
 		$responsetext = $responses['ResponseText'];
-		for each ($responses as $response)
+		foreach ($responses as $response)
 		{ ?>
 			<td>
 			<input type="radio" name="response[<?php echo $questionid; ?>]" value="<?php echo $responseid; ?>"><?php echo $responsetext; ?>
