@@ -51,9 +51,31 @@ var s = document.getElementsByTagName('script')[0];
 s.parentNode.insertBefore(ga, s);
 })();
 //]]></script>	
+<script>
+	//not sure how to pass survey id each time
+	var myVar=setInterval(function(){getResults()},5000);
+
+	//pass survey id
+	function getResults(surveyid) {
+	if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+	} else {  // code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("poll").innerHTML=xmlhttp.responseText;
+    }
+	}
+	xmlhttp.open("GET","poll_vote.php?vote="+surveyid,true);
+	xmlhttp.send();
+}
+</script>
 
 </head>
-<body>
+<!-- Should run AJAX script -->
+<body onload = "getResults(<?php $_GET['surveyid'] ?>)">
 <div class ="main_content">
  <!-- 
 ----------------------------------------------------------------------------------------
@@ -75,22 +97,15 @@ This div is meant to display final form.
 	require_once 'php/getSurveyInfo.php';
 	
 	$info = getSurveyInfo($_GET['surveyid']);
+	
 	?>
     
     <div><p style="margin: 0 0 0 15px">Title: <b><?php echo $info['SurveyName']; ?></p></b></div>
 	<div><p style="margin: 0 0 0 15px">Description: <?php echo $info['SurveyDescription']; ?></p></div>
 	<br>
     <br>
-	<?php include 'php/listQuestionsNoLinks.php'; ?>
+	<?php include 'php/ShowBarGraphs.php'; ?>
 	<br><br><br><br><br><br>
-    
-    <!-- Will link to results page with bar graphs
-            and wil be updated in real time via
-            AJAX -->
-    <a href="Results.html?surveyid=<?php echo $_GET['surveyid'] ?>" style="margin:0 20px 0">Results</a>
-    
-    <!-- Will take you to a page to take the survey -->
-    <a href="TakePoll.html?surveyid=<?php echo $_GET['surveyid'] ?>">Take Survey</a>
     
 </div>
  <!-- 
