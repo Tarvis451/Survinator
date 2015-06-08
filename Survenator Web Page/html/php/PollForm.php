@@ -23,6 +23,7 @@ $questionlist = getQuestions($surveyid);
 //cancel button, exit and go back
 if (isset($_POST['cancel']))
 {
+	header("Location: PollView.html?surveyid={$surveyid}");
 	die("User canceled survey");
 }
 
