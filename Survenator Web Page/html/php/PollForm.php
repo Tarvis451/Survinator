@@ -46,10 +46,12 @@ if (isset($_POST['submit']))
 	}
 	
 	if ($allanswered == true)
+	{
 		foreach ($responses as $questionid => $response)
 			$res = submitResponse($surveyid, $questionid, $response);
-		
-	die("User submitted survey");
+			
+		die("User submitted survey");
+	}
 }
 
 
