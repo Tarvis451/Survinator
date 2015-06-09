@@ -75,7 +75,7 @@ s.parentNode.insertBefore(ga, s);
 
 </head>
 <!-- Should run AJAX script -->
-<body onload = "getResults(<?php $_GET['surveyid']; ?>)">
+<body onload = "setInterval(getResults(<?php $_GET['surveyid']; ?>),5000);">
 <div class ="main_content">
  <!-- 
 ----------------------------------------------------------------------------------------
