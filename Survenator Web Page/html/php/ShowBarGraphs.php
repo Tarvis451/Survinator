@@ -36,12 +36,12 @@ foreach ($questionlist as $question)
 		?>
 		
 		<td>
-		Yes:    <img src="poll.gif"
+		True:    <img src="poll.gif"
 				width='<?php echo(100*round($queryT/($queryF+$queryT),2)); ?>' height='20'>
 				<?php echo(100*round($queryT/($queryF+$queryT),2)); ?>%
 				<br>
 				
-		No:     <img src="poll.gif"
+		False:     <img src="poll.gif"
 				width='<?php echo(100*round($queryF/($queryF+$queryT),2)); ?>' height='20'>
 				<?php echo(100*round($queryF/($queryF+$queryT),2)); ?>%
 		
