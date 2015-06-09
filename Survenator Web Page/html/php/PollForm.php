@@ -19,6 +19,7 @@ if (isset($_POST['surveyid']))
 	$surveyid = $_POST['surveyid'];
 	
 $questionlist = getQuestions($surveyid);
+$error = "";
 
 //cancel button, exit and go back
 if (isset($_POST['cancel']))
@@ -115,7 +116,9 @@ foreach ($questionlist as $question)
     
 
 } ?>
-    
+
+
+<center><font color='red'><?php echo $error; ?></font></center>
 </table> 
 <input type="submit" name="submit" value="Submit Survey">
 <input type="submit" name="cancel" value="Cancel">
