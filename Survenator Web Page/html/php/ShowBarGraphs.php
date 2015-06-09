@@ -8,7 +8,7 @@ if ($questionlist != 0)
 
 ?>
 <br><br>
-<table id="poll" style="width:100%; text-align:center" >
+<table id="poll" style="width:100%; text-align:center; border: 1px solid black;" >
 	<tr>
 		<th>Question #</th>
 		<th>Question Text</th>
