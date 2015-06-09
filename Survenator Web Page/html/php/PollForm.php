@@ -31,8 +31,23 @@ if (isset($_POST['cancel']))
 if (isset($_POST['submit']))
 {
 	$responses = $_POST['responses'];
-	foreach ($responses as $questionid => $response)
-		$res = submitResponse($surveyid, $questionid, $response);
+	
+	//Make sure nothing is left blank
+	$allanswered = true;
+	
+	foreach ($responses as $response)
+	{
+		if ($response == NULL)
+		{
+			$error="You must answer each question!"
+			$allanswered = false;
+			break;
+		}
+	}
+	
+	if ($allanswered == true)
+		foreach ($responses as $questionid => $response)
+			$res = submitResponse($surveyid, $questionid, $response);
 		
 	die("User submitted survey");
 }
