@@ -4,6 +4,9 @@ title, form {
   width: 100%;
   text-align: center;
 }
+table, th, td {
+	border: 1px solid black;
+}
 </style>
 
 <?php
