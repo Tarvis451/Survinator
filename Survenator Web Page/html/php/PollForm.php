@@ -39,7 +39,7 @@ if (isset($_POST['submit']))
 	{
 		if ($response == NULL)
 		{
-			$error="You must answer each question!"
+			$error = "You must answer each question!";
 			$allanswered = false;
 			break;
 		}
