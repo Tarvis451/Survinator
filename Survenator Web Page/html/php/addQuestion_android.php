@@ -4,16 +4,16 @@
 
 include_once 'addQuestion.php';
 
-$surveyid = $_GET["SurveyID"];
-$questiontitle = $_GET["QuestionTitle"];
-$questiontype = $_GET["QuestionType"];
+$surveyid = $_POST["SurveyID"];
+$questiontitle = $_POST["QuestionTitle"];
+$questiontype = $_POST["QuestionType"];
 
 if($questiontype == "MC")
 {
-	$r1 = $_GET["r1"];
-	$r2 = $_GET["r2"];
-	$r3 = $_GET["r3"];
-	$r4 = $_GET["r4"];
+	$r1 = $_POST["r1"];
+	$r2 = $_POST["r2"];
+	$r3 = $_POST["r3"];
+	$r4 = $_POST["r4"];
 
 	$responses = array($r1, $r2, $r3, $r4);
 
