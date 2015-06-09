@@ -64,10 +64,12 @@ foreach ($questionlist as $question)
 		B:     <img src="poll.gif"
 				width='<?php echo(100*round($query2/( $query1 + $query2 + $query3 + $query4 ),2)); ?>' height='20'>
 				<?php echo(100*round($queryF/($queryF+$queryT),2)); ?>%
+				<br>
 				
 		C:     <img src="poll.gif"
 				width='<?php echo(100*round($query3/( $query1 + $query2 + $query3 + $query4 ),2)); ?>' height='20'>
 				<?php echo(100*round($queryF/($queryF+$queryT),2)); ?>%
+				<br>
 		
 		D:     <img src="poll.gif"
 				width='<?php echo(100*round($query4/( $query1 + $query2 + $query3 + $query4 ),2)); ?>' height='20'>
