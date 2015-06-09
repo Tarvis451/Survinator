@@ -72,6 +72,7 @@ public class MultipleChoiceActivity extends ActionBarActivity {
         Intent i = new Intent();
         i.putExtra("question_title",questionTitle.getText().toString());
         i.putStringArrayListExtra("mc_responses",responseTitleList);
+        i.putExtra("question_type","MC");
         setResult(RESULT_OK, i);
         finish();
     }

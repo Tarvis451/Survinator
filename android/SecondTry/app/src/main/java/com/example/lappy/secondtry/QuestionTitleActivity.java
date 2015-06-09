@@ -63,6 +63,7 @@ public class QuestionTitleActivity extends ActionBarActivity {
 
         Intent i = new Intent();
         i.putExtra("question_title",titleText.getText().toString());
+        i.putExtra("question_type",getIntent().getStringExtra("question_type"));
         setResult(RESULT_OK, i);
         finish();
     }

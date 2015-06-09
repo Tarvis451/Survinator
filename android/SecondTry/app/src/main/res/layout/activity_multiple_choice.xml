@@ -16,19 +16,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="43dp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/mcQuestionTitleText"
-        android:layout_below="@+id/textView4"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4"
-        android:onClick="responseTitle"
-        android:editable="false"
-        android:clickable="true" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,4 +54,14 @@
         android:layout_toLeftOf="@+id/button7"
         android:layout_toStartOf="@+id/button7"
         android:layout_below="@+id/mcQuestionTitleText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mcQuestionTitleText"
+        android:layout_below="@+id/textView4"
+        android:layout_alignRight="@+id/button8"
+        android:layout_alignEnd="@+id/button8"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

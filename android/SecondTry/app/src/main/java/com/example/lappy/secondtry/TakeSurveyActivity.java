@@ -334,12 +334,12 @@ public class TakeSurveyActivity extends ActionBarActivity {
     {
         pos++;
         if(pos >= questions.length()){
-            Toast.makeText(getApplicationContext(),"You're done son!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Survey finished. Thank you!", Toast.LENGTH_LONG).show();
             sendResults();
         }
         else
         {
-            Toast.makeText(getApplicationContext(),"pos="+pos+" qlen="+questions.length(), Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(),"pos="+pos+" qlen="+questions.length(), Toast.LENGTH_LONG).show();
             drawQuestion();
         }
     }

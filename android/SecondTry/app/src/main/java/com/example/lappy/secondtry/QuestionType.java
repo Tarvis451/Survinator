@@ -55,6 +55,7 @@ public class QuestionType extends ActionBarActivity
                 new Intent(this, QuestionTitleActivity.class);
         goToTrueFalse.putExtra("question_type",MainActivity.TRUE_FALSE);
         goToTrueFalse.putExtra("title_of_what", "question");
+        goToTrueFalse.putExtra("question_type","TF");
         startActivityForResult(goToTrueFalse, 1);
     }
 
@@ -64,6 +65,7 @@ public class QuestionType extends ActionBarActivity
                 new Intent(this, QuestionTitleActivity.class);
         goToFreeResponse.putExtra("question_type",MainActivity.FREE_RESPONSE);
         goToFreeResponse.putExtra("title_of_what", "question");
+        goToFreeResponse.putExtra("question_type","SA");
         startActivityForResult(goToFreeResponse, 1);
     }
 
