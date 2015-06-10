@@ -49,15 +49,10 @@ foreach ($questionlist as $question)
 		-->
 		
 		<td>
-		True:    <img src="poll.gif"
-				width='<?php echo(100*round(9/(2+9),2)); ?>' height='20'>
-				<?php echo(100*round(9/(2+9),2)); ?>%
+		True:    <img src="poll.gif" width='81' height='20'>
 				<br>
 				
-		False:     <img src="poll.gif"
-				width='<?php echo(100*round(2/(9+2),2)); ?>' height='20'>
-				<?php echo(100*round(2/(9+$2),2)); ?>%
-		
+		False:     <img src="poll.gif" width='19' height='20'>
 		</td>
 		
 		<?php
