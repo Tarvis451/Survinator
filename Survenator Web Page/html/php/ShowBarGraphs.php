@@ -48,7 +48,7 @@ foreach ($questionlist as $question)
 		</td>
 		-->
 		
-		<td>
+		<td style="text-align:right">
 		True:    <img src="poll.gif" width='81' height='20'>
 				<br>
 				
