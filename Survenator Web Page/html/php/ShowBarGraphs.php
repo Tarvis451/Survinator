@@ -34,7 +34,7 @@ foreach ($questionlist as $question)
 		$queryF = "SELECT COUNT(*) AS CountF FROM Responses WHERE SurveyID={$surveyid} AND QuestionID={$question['QuestionID']} AND Response=2";
 		
 		?>
-		
+		<!--
 		<td>
 		True:    <img src="poll.gif"
 				width='<?php echo(100*round($queryT/($queryF+$queryT),2)); ?>' height='20'>
@@ -44,6 +44,19 @@ foreach ($questionlist as $question)
 		False:     <img src="poll.gif"
 				width='<?php echo(100*round($queryF/($queryF+$queryT),2)); ?>' height='20'>
 				<?php echo(100*round($queryF/($queryF+$queryT),2)); ?>%
+		
+		</td>
+		-->
+		
+		<td>
+		True:    <img src="poll.gif"
+				width='<?php echo(100*round(9/($2+9),2)); ?>' height='20'>
+				<?php echo(100*round(9/(2+9),2)); ?>%
+				<br>
+				
+		False:     <img src="poll.gif"
+				width='<?php echo(100*round(2/(9+2),2)); ?>' height='20'>
+				<?php echo(100*round(2/(9+$2),2)); ?>%
 		
 		</td>
 		
