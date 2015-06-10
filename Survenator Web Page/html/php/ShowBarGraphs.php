@@ -30,8 +30,8 @@ foreach ($questionlist as $question)
 	//Query number of yes' and no's
 	if ($question['QuestionType'] == "TF") {
 		//each query counts the number of true and false questions there are
-		//$queryT = 
-		//$queryF = 
+		$queryT = "SELECT COUNT(UserID) FROM Responses WHERE SurveyID={$surveyid} AND QuestionID={$question['QuestionID']} AND ResponseID=1";
+		$queryF = "SELECT COUNT(UserID) FROM Responses WHERE SurveyID={$surveyid} AND QuestionID={$question['QuestionID']} AND ResponseID=2";
 		
 		?>
 		
