@@ -30,8 +30,8 @@ foreach ($questionlist as $question)
 	//Query number of yes' and no's
 	if ($question['QuestionType'] == "TF") {
 		//each query counts the number of true and false questions there are
-		$queryT = "SELECT COUNT(*) FROM Responses WHERE SurveyID={$surveyid} AND QuestionID={$question['QuestionID']} AND Response=1";
-		$queryF = "SELECT COUNT(*) FROM Responses WHERE SurveyID={$surveyid} AND QuestionID={$question['QuestionID']} AND Response=2";
+		$queryT = "SELECT COUNT(*) AS CountT FROM Responses WHERE SurveyID={$surveyid} AND QuestionID={$question['QuestionID']} AND Response=1";
+		$queryF = "SELECT COUNT(*) AS CountF FROM Responses WHERE SurveyID={$surveyid} AND QuestionID={$question['QuestionID']} AND Response=2";
 		
 		?>
 		
@@ -53,11 +53,19 @@ foreach ($questionlist as $question)
 	
 	//Query number using response 1 with this question on this survey
 	if ($question['QuestionType'] == "MC") {
-		//Each query counts the number of users that voted for each response
-		//$query1 =
-		//$query2 =
-		//$query3 =
-		//$query4 =
+		//Each query counts the number of users that voted for each response.
+		
+		// This query produces one single integer in the column "CountA".
+		$query1 = "SELECT COUNT(*) AS CountA FROM Responses WHERE SurveyID={$surveyid} AND QuestionID={$question['QuestionID']} AND Response=1";
+		
+		// This query produces one single integer in the column "CountB".
+		$query2 = "SELECT COUNT(*) AS CountB FROM Responses WHERE SurveyID={$surveyid} AND QuestionID={$question['QuestionID']} AND Response=2";
+
+		// This query produces one single integer in the column "CountC".
+		$query3 = "SELECT COUNT(*) AS CountC FROM Responses WHERE SurveyID={$surveyid} AND QuestionID={$question['QuestionID']} AND Response=3";
+
+		// This query produces one single integer in the column "CountD".
+		$query4 = "SELECT COUNT(*) AS CountD FROM Responses WHERE SurveyID={$surveyid} AND QuestionID={$question['QuestionID']} AND Response=4";
 		
 		?>
 		
@@ -88,8 +96,9 @@ foreach ($questionlist as $question)
 	
 	//list 4 most recent responses
 	if ($question['QuestionType'] == "SA") {
-		//query db for short answers for this question
-		//$query = 
+		
+		// This query returns each short answer response to this question.
+		$query = "SELECT Response FROM Responses WHERE SurveyID={$surveyid} AND QuestionID={$question['QuestionID']}";
 	}
 	
 	
