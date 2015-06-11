@@ -36,7 +36,7 @@ function getResponses($surveyid, $questionid)
 	$questionid = mysql_real_escape_string($questionid);
 	
 	//get DB query
-	$query = "SELECT ResponseID, ResponseText, ResponseType from Surveys WHERE SurveyID={$surveyid} AND QuestionID={$questionid}";
+	$query = "SELECT ResponseID, ResponseText, QuestionType from Surveys WHERE SurveyID={$surveyid} AND QuestionID={$questionid}";
 	$result = mysql_query($query);
 	
 	//Question has no answers!!
