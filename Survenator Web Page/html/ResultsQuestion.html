@@ -18,6 +18,11 @@
 	$response1 = $responselist[0];
 	$responsetype = $response1['QuestionType'];
 	echo "This is type {$responsetype}<br>";
+	
+	if ($responsetype = 'MC')
+		$responses = getResponseList($surveyid,$questionid);
+	else
+		$responses = getResponseChoices($surveyid,$questionid,$responsecount);
 
 ?>
 
