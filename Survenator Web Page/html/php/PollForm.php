@@ -57,6 +57,7 @@ if (isset($_POST['submit']))
 		echo "User submitted survey";
 		
 		?>
+		<br><br><br>
 		<a href="MainOptions.html" >Go to Main Menu</a>
 		<?php
 		
