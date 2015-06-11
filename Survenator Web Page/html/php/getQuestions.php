@@ -9,7 +9,7 @@ function getQuestions($surveyid)
 	$surveyid = mysql_real_escape_string($surveyid);
 	
 	//get DB query
-	$query = "SELECT DISTINCT QuestionID, QuestionText, QuestionType from Surveys WHERE SurveyID={$surveyid}";
+	$query = "SELECT DISTINCT QuestionID, QuestionText from Surveys WHERE SurveyID={$surveyid}";
 	$result = mysql_query($query);
 	
 	if (mysql_num_rows($result) == 0)
@@ -36,7 +36,7 @@ function getResponses($surveyid, $questionid)
 	$questionid = mysql_real_escape_string($questionid);
 	
 	//get DB query
-	$query = "SELECT ResponseID, ResponseText from Surveys WHERE SurveyID={$surveyid} AND QuestionID={$questionid}";
+	$query = "SELECT ResponseID, ResponseText, ResponseType from Surveys WHERE SurveyID={$surveyid} AND QuestionID={$questionid}";
 	$result = mysql_query($query);
 	
 	//Question has no answers!!
