@@ -98,23 +98,9 @@ This div is meant to display final form.
 
 <div>
     <?php
-		//MC/TF
-		
-		if ($responsetype == "MC" || $responsetype == "TF")
+		foreach ($responses as $responsecount)
 		{
-			foreach($responselist as $key => $response)
-			{
-				$index = $key - 1;
-				echo $responses[$index];
-			}
-		}
-		else if ($responsetype == "SA") //FR
-		{
-			foreach($responselist as $key => $response)
-			{
-				$index = $key - 1;
-				echo $responses[$index];
-			}
+			echo "Count: {$responsecount}<br>";
 		}
 	?>
 	<br><br><br><br><br><br>
