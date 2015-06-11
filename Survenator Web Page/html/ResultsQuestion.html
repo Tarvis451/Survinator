@@ -99,7 +99,7 @@ This div is meant to display final form.
 		
 		if ($responsetype == "MC" || $responsetype == "TF")
 		{
-			foreach($responselist => $key as $response)
+			foreach($responselist as $key => $response)
 			{
 				$index = $key - 1;
 				echo $responses[$index];
@@ -107,7 +107,7 @@ This div is meant to display final form.
 		}
 		else if ($responsetype == "SA") //FR
 		{
-			foreach($responselist => $key as $response)
+			foreach($responselist as $key => $response)
 			{
 				$index = $key - 1;
 				echo $responses[$index];
