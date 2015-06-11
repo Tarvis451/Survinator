@@ -14,7 +14,9 @@
 	
 	$responselist = getResponses($surveyid, $questionid);
 	$responsecount = count($responselist);
+	echo "There are {$responsecount} responses<br>";
 	$responsetype = $responselist['0'['ResponseType']];
+	echo "This is type {$responsetype}<br>";
 
 ?>
 
