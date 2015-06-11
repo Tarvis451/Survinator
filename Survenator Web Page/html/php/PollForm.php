@@ -57,9 +57,7 @@ if (isset($_POST['submit']))
 		echo "User submitted survey";
 		
 		?>
-		<form action="MainOptions.html">
-			<input type="button" name="redirect" value="Go to main menu">
-		</form>
+		<a href="MainOptions.html" >Go to Main Menu</a>
 		<?php
 		
 		die();
