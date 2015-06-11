@@ -13,7 +13,7 @@ function getResponseChoices($surveyid, $questionid, $numChoices)
 	
 	$responses = array();
 	
-	for ($response = 1; $response < $numChoices; $response++)
+	for ($response = 1; $response <= $numChoices; $response++)
 	{
 		$query = "SELECT COUNT(*) AS Count FROM Responses WHERE SurveyID={$surveyid} AND QuestionID={$questionid} AND Response='{$response}'";
 		$result = mysql_query($query);
