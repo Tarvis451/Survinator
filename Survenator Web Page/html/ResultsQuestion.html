@@ -63,21 +63,22 @@ s.parentNode.insertBefore(ga, s);
 })();
 //]]></script>	
 <script>
-
+	
 	//pass survey id
-	function getResults() 
-	{
-		<?php 
-		if ($responsetype == "MC" || $responsetype == "TF")
-		{
-			$responses = getResponseChoices($surveyid, $questionid, $responsecount);
+	function getResults(surveyid, question) {
+		if (window.XMLHttpRequest) {
+    			// code for IE7+, Firefox, Chrome, Opera, Safari
+    			xmlhttp=new XMLHttpRequest();
+		} else {  // code for IE6, IE5
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 		}
-		else if ($responsetype == "SA")
-		{
-			$responses = getResponseList($surveyid, $questionid);
+		xmlhttp.onreadystatechange=function() {
+			if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      				document.getElementById("poll").innerHTML=xmlhttp.responseText;
+    			}
 		}
-		?>
-	}
+	xmlhttp.open("GET","poll_vote.php?vote="+surveyid,true);
+	xmlhttp.send();
 </script>
 
 </head>
