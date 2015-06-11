@@ -54,12 +54,15 @@ if (isset($_POST['submit']))
 		foreach ($responses as $questionid => $response)
 			$res = submitResponse($surveyid, $questionid, $response);
 			
-		die("User submitted survey");
+		echo "User submitted survey";
+		
 		?>
 		<form action="MainOptions.html">
 			<input type="button" name="redirect" value="Go to main menu">
 		</form>
 		<?php
+		
+		die();
 		
 	}
 }
