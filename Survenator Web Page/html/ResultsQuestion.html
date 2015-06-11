@@ -1,12 +1,20 @@
 <?php
 
-    include 'php/login.php';
+    require_once 'php/login.php';
+	require_once 'php/getQuestions.php';
     
     if (!checklogin())
     {
         header("Location: index.html");
         die("You must log in first.");
     }
+	
+	$surveyid = $_GET['surveyid'];
+	$questionid = $_GET['questionid'];
+	
+	$responselist = getResponses($surveyid, $questionid);
+	$responsecount = count($responselist);
+	$responsetype = $responselist['0'['ResponseType']];
 
 ?>
 
@@ -54,26 +62,22 @@ s.parentNode.insertBefore(ga, s);
 <script>
 
 	//pass survey id
-	function getResults(surveyid) {
-	if (window.XMLHttpRequest) {
-    // code for IE7+, Firefox, Chrome, Opera, Safari
-    xmlhttp=new XMLHttpRequest();
-	} else {  // code for IE6, IE5
-		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	function getResults() 
+	{
+		if ($responsetype == "MC" || $responsetype == "TF")
+		{
+			$responses = getResponseChoices($surveyid, $questionid, $responsecount);
+		}
+		else if ($responsetype == "SA")
+		{
+			$responses = getResponseList($surveyid, $questionid);
+		}
 	}
-	xmlhttp.onreadystatechange=function() {
-    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-      document.getElementById("poll").innerHTML=xmlhttp.responseText;
-    }
-	}
-	xmlhttp.open("GET","poll_vote.php?vote="+surveyid,true);
-	xmlhttp.send();
-}
 </script>
 
 </head>
 <!-- Should run AJAX script -->
-<body onload = "setInterval(getResults(<?php $_GET['surveyid']; ?>),5000);">
+<body onload = "setInterval(getResults(),5000);">
 <div class ="main_content">
  <!-- 
 ----------------------------------------------------------------------------------------
@@ -91,18 +95,25 @@ This div is meant to display final form.
 
 <div>
     <?php
-	
-	require_once 'php/getSurveyInfo.php';
-	
-	$info = getSurveyInfo($_GET['surveyid']);
-	
+		//MC/TF
+		
+		if ($responsetype == "MC" || $responsetype == "TF")
+		{
+			foreach($responselist => $key as $response)
+			{
+				$index = $key - 1;
+				echo $responses[$index];
+			}
+		}
+		else if ($responsetype == "SA") //FR
+		{
+			foreach($responselist => $key as $response)
+			{
+				$index = $key - 1;
+				echo $responses[$index];
+			}
+		}
 	?>
-    
-    <div><p style="margin: 0 0 0 15px">Title: <b><?php echo $info['SurveyName']; ?></p></b></div>
-	<div><p style="margin: 0 0 0 15px">Description: <?php echo $info['SurveyDescription']; ?></p></div>
-	<br>
-    <br>
-	<?php include 'php/listQuestionsResults.php'; ?>
 	<br><br><br><br><br><br>
 	<a href="MainOptions.html">Back to Main Menu</a>
     

@@ -1,7 +1,10 @@
 <?php 
 include_once 'getQuestions.php';
+include_once 'getResponses.php';
 $surveyid = $_GET['surveyid'];
+$questionid = $_GET['questionid'];
 $questionlist = getQuestions($surveyid);
+$responselist = getResponses($surveyid, $questionid);
 
 if ($questionlist != 0)
 {
