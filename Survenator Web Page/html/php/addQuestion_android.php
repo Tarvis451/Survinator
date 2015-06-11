@@ -1,21 +1,20 @@
-/* Android add question
-*/
 <?php
-
 include_once 'addQuestion.php';
-
 $surveyid = $_POST["SurveyID"];
 $questiontitle = $_POST["QuestionTitle"];
 $questiontype = $_POST["QuestionType"];
+$numresponse = $_POST["NumResponse"];
+
+	print_r($_POST);
 
 if($questiontype == "MC")
 {
-	$r1 = $_POST["r1"];
-	$r2 = $_POST["r2"];
-	$r3 = $_POST["r3"];
-	$r4 = $_POST["r4"];
+	$responses = array();
 
-	$responses = array($r1, $r2, $r3, $r4);
+	for($i=1; $i<=$numresponse; $i++)
+	{
+		array_push($responses, $_POST["r{$i}"]);
+	}
 
 	addQuestionMC($questiontitle,$surveyid,$responses);
 	die();
@@ -30,6 +29,4 @@ else if ($questiontype == "TF")
 	addQuestionTF($questiontitle,$surveyid);
 	die();
 }
-
-
 ?>
