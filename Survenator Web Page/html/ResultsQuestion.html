@@ -70,7 +70,7 @@ s.parentNode.insertBefore(ga, s);
 		<?php 
 		if ($responsetype == "MC" || $responsetype == "TF")
 		{
-			$responses = getResponseChoices($surveyid, $questionid, $responsecount)
+			$responses = getResponseChoices($surveyid, $questionid, $responsecount);
 		}
 		else if ($responsetype == "SA")
 		{
