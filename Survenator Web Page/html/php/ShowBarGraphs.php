@@ -52,9 +52,10 @@ else
 	foreach ($results as $result)
 	{
 		echo "<tr><td>{$result['ResponseText']}</td>";
-		echo "<td>{$result['Count']} ";
+		
 		$barwidth = ($result['Count']/$sum) * 100;
-		echo "<img src='poll.gif' width='$barwidth' height='20'></td></tr>";
+		echo "<td><img src='poll.gif' width='$barwidth' height='20'> ";
+		echo "{$result['Count']}</td></tr>";
 	}
 	
 	echo "</table>";
