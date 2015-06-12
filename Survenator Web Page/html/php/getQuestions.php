@@ -19,7 +19,10 @@ function getQuestions($surveyid)
 	$questionlist = array();
 	
 	while ($row = mysql_fetch_array($result))
-		array_push($questionlist, $row);
+	{
+		$questionid = $row['QuestionID'];
+		$questionlist[$questionid] = $row;
+	}
 	
 	db_close($dbhandle);
 	
