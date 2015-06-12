@@ -13,7 +13,7 @@ $questiontype = $question['QuestionType'];
 
 ?>
 
-<b><center>Question <?php echo $questionid; ?>: </b><?php echo $questiontext; ?></center>
+<b><center>Question <?php echo $questionid; ?>: </b><?php echo $questiontext; ?></center><br><br><br>
 
 <?php
 
