@@ -1,8 +1,6 @@
 <?php
 
-    require_once 'php/login.php';
 	require_once 'php/getQuestions.php';
-	require_once 'php/getResponses.php';
     
     if (!checklogin())
     {
@@ -12,18 +10,6 @@
 	
 	$surveyid = $_GET['surveyid'];
 	$questionid = $_GET['questionid'];
-	
-	$responselist = getResponses($surveyid, $questionid);
-	$responsecount = sizeof($responselist);
-	echo "There are {$responsecount} responses<br>";
-	$response1 = $responselist[0];
-	$responsetype = $response1['QuestionType'];
-	echo "This is type {$responsetype}<br>";
-	
-	if ($responsetype == "SA")
-		$responses = getResponseList($surveyid,$questionid);
-	else
-		$responses = getResponseChoices($surveyid,$questionid,$responsecount);
 
 ?>
 
@@ -83,13 +69,13 @@ s.parentNode.insertBefore(ga, s);
       				document.getElementById("poll").innerHTML=xmlhttp.responseText;
     			}
 		}
-	xmlhttp.open("GET","poll_vote.php?vote="+surveyid,true);
+	xmlhttp.open("GET","php/ShowBarGraphs.php?surveyid="+surveyid+"&questionid="+questionid,true);
 	xmlhttp.send();
 </script>
 
 </head>
 <!-- Should run AJAX script -->
-<!-- <body onload = "setInterval(getResults(),5000);"> -->
+<body onload = "setInterval(getResults(<?php echo $surveyid; ?>, <?php echo $questionid; ?>),5000);">
 <div class ="main_content">
  <!-- 
 ----------------------------------------------------------------------------------------
@@ -106,14 +92,9 @@ This div is meant to display final form.
 -->
 
 <div>
-    <?php
-		foreach ($responses as $responsecount)
-		{
-			echo "Count: {$responsecount}<br>";
-		}
-	?>
+    
 	<br><br><br><br><br><br>
-	<a href="Results.html?surveyid=<?php echo $surveyid; ?>">Back to Main Menu</a>
+	<a href="Results.html?surveyid=<?php echo $surveyid; ?>">Go Back</a>
     
 </div>
  <!-- 
