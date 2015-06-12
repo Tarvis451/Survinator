@@ -21,7 +21,7 @@ if ($questiontype == "SA")
 {
 	$results = getResponseList($surveyid, $questionid); ?>
 	
-	<table id="poll" style="width:100%; text-align:center;" >
+	<table id="poll" style="width:100%; text-align:left;" >
 	<tr>
 		<th>Responses</th>
 	</tr>
