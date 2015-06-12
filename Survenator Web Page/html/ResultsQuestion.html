@@ -67,14 +67,14 @@ s.parentNode.insertBefore(ga, s);
       				document.getElementById("results").innerHTML=xmlhttp.responseText;
     			}
 		}
-	xmlhttp.open("GET","php/ShowBarGraphs.php?surveyid="+surveyid+"&questionid="+questionid,true);
+	xmlhttp.open("GET","php/ShowBarGraphs.php?surveyid=<?php echo $surveyid; ?>&questionid=<?php echo $questionid; ?>",true);
 	xmlhttp.send();
 	}
 </script>
 
 </head>
 <!-- Should run AJAX script -->
-<body onload = "setInterval(getResults(<?php echo $surveyid; ?>, <?php echo $questionid; ?>),5000);">
+<body onload = "setInterval(getResults,5000);">
 <div class ="main_content">
  <!-- 
 ----------------------------------------------------------------------------------------
