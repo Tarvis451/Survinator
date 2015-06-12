@@ -28,7 +28,7 @@ if ($questiontype == "SA")
 	
 	<?php
 	foreach ($results as $result)
-		echo "<tr><td>{$result['Response']}</td></tr>";
+		echo "<tr><td>{$result}</td></tr>";
 		
 	echo "</table>";
 }
