@@ -8,7 +8,7 @@ $questionid = $_GET['questionid'];
 
 $questionlist = getQuestions($surveyid);
 $question = $questionlist[$questionid];
-$questiontext = $question['QuestionTitle'];
+$questiontext = $question['QuestionText'];
 $questiontype = $question['QuestionType'];
 
 ?>
