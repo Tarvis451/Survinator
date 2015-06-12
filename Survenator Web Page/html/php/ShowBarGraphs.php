@@ -17,7 +17,7 @@ $questiontype = $question['QuestionType'];
 
 <?php
 
-if ($questiontype = "SA")
+if ($questiontype == "SA")
 {
 	$results = getResponseList($surveyid, $questionid); ?>
 	
