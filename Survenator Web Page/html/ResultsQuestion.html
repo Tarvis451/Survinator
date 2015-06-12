@@ -47,8 +47,12 @@ s.parentNode.insertBefore(ga, s);
 })();
 //]]></script>	
 <script>
-	
-	//pass survey id
+	function getResultsInterval()
+	{
+		setInterval(getResults,1000); //1 second delay
+		getResults();
+	}
+
 	function getResults() 
 	{
 		if (window.XMLHttpRequest) 
@@ -74,7 +78,7 @@ s.parentNode.insertBefore(ga, s);
 
 </head>
 <!-- Should run AJAX script -->
-<body onload = "setInterval(getResults,5000);">
+<body onload = "getResultsInterval();">
 <div class ="main_content">
  <!-- 
 ----------------------------------------------------------------------------------------
