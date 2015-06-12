@@ -42,7 +42,7 @@ else
 	foreach ($results as $result)
 		$sum += $result['Count'];
 	?>
-	<table id="poll" style="width:100%; text-align:center;" >
+	<table id="poll" style="width:100%; text-align:left;" >
 	<tr>
 		<th>Response Text</th>
 		<th>Results</th>
@@ -51,8 +51,8 @@ else
 	<?php
 	foreach ($results as $result)
 	{
-		echo "<tr><td><left>{$result['ResponseText']}</left></td>";
-		echo "<td><left>{$result['Count']}</left>";
+		echo "<tr><td>{$result['ResponseText']}</td>";
+		echo "<td>{$result['Count']} ";
 		$barwidth = ($result['Count']/$sum) * 100;
 		echo "<img src='poll.gif' width='$barwidth' height='20'></td></tr>";
 	}
