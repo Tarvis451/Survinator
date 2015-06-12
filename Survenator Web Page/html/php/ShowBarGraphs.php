@@ -25,6 +25,7 @@ if ($questiontype == "SA")
 	<tr>
 		<th>Responses</th>
 	</tr>
+	<br>
 	
 	<?php
 	foreach ($results as $result)
@@ -47,6 +48,7 @@ else
 		<th>Response Text</th>
 		<th>Results</th>
 	</tr>
+	<br>
 	
 	<?php
 	foreach ($results as $result)
