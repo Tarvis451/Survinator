@@ -29,6 +29,8 @@ if ($questiontype = "SA")
 	<?php
 	foreach ($responses as $response);
 		echo "<tr><td>{$results['Response']}</td></tr>";
+		
+	echo "</table>";
 }
 else
 {
@@ -46,6 +48,8 @@ else
 		echo "<tr><td>{$response['ResponseText']}</td>";
 		echo "<td>{$response['Count']}</td><?tr>";
 	}
+	
+	echo "</table>";
 }
 	
 ?>
