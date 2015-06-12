@@ -53,7 +53,7 @@ else
 	{
 		echo "<tr><td>{$result['ResponseText']}</td>";
 		
-		$barwidth = ($result['Count']/$sum) * 100;
+		$barwidth = ($result['Count']/$sum) * 300;
 		echo "<td><img src='poll.gif' width='$barwidth' height='20'> ";
 		echo "{$result['Count']}</td></tr>";
 	}
