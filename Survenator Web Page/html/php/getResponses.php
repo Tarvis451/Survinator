@@ -29,14 +29,14 @@ function getResponseChoices($surveyid, $questionid)
 		$result_text = mysql_query($query);
 		
 		$row = mysql_fetch_array($result_text);
-		$responserow['ResponseText']=$row['ResponseText'];
+		$responserow['ResponseText'] = $row['ResponseText'];
 		
 		//get response count
 		$query = "SELECT COUNT(*) AS Count FROM Responses WHERE SurveyID={$surveyid} AND QuestionID={$questionid} AND Response='{$response}'";
 		$result_count = mysql_query($query);
 		
 		$row = mysql_fetch_array($result_count);
-		$responserow['Count']=$row['Count'];
+		$responserow['Count'] = $row['Count'];
 		
 		//add both to output array
 		array_push($responses, $responserow);
