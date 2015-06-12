@@ -34,8 +34,14 @@ if ($questiontype == "SA")
 }
 else
 {
-	$results = getResponseChoices($surveyid, $questionid); ?>
+	$results = getResponseChoices($surveyid, $questionid); 
 	
+	//calculate sum for bar graph
+	$sum = 0;
+	
+	foreach ($results as $result)
+		$sum += $result['Count'];
+	?>
 	<table id="poll" style="width:100%; text-align:center;" >
 	<tr>
 		<th>Response Text</th>
@@ -45,8 +51,10 @@ else
 	<?php
 	foreach ($results as $result)
 	{
-		echo "<tr><td>{$result['ResponseText']}</td>";
-		echo "<td>{$result['Count']}</td><?tr>";
+		echo "<tr><td><left>{$result['ResponseText']}</left></td>";
+		echo "<td><left>{$result['Count']}</left>";
+		$barwidth = ($result['Count']/$sum) * 100;
+		echo "<img src='poll.gif' width='$barwidth' height='20'></td></tr>";
 	}
 	
 	echo "</table>";
