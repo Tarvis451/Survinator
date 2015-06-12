@@ -49,20 +49,27 @@ s.parentNode.insertBefore(ga, s);
 <script>
 	
 	//pass survey id
-	function getResults(surveyid, question) {
-		if (window.XMLHttpRequest) {
+	function getResults(surveyid, question) 
+	{
+		if (window.XMLHttpRequest) 
+		{
     			// code for IE7+, Firefox, Chrome, Opera, Safari
     			xmlhttp=new XMLHttpRequest();
-		} else {  // code for IE6, IE5
+		} 
+		else 
+		{  // code for IE6, IE5
 			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 		}
-		xmlhttp.onreadystatechange=function() {
-			if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-      				document.getElementById("poll").innerHTML=xmlhttp.responseText;
+		xmlhttp.onreadystatechange=function() 
+		{
+			if (xmlhttp.readyState==4 && xmlhttp.status==200) 
+			{
+      				document.getElementById("results").innerHTML=xmlhttp.responseText;
     			}
 		}
 	xmlhttp.open("GET","php/ShowBarGraphs.php?surveyid="+surveyid+"&questionid="+questionid,true);
 	xmlhttp.send();
+	}
 </script>
 
 </head>
@@ -82,9 +89,6 @@ Header div.
 This div is meant to display final form.
 ----------------------------------------------------------------------------------------
 -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js" type="text/javascript"></script>
-<script>$('#results').load('php/ShowBarGraphs.php?surveyid=<?php echo $surveyid; ?>&questionid=<?php echo $questionid; ?>');</script>
-
 <div ID="results"></div>
 
 <div>
