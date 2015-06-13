@@ -34,8 +34,6 @@ textarea{
 
 </style>    
 <title>Survenator - Survey Application</title>
-<meta name="robots" content="noindex, nofollow" />
-
 <link rel="stylesheet" type="text/css" href="form.css">
 
 
@@ -47,7 +45,13 @@ textarea{
 Header div.
 ----------------------------------------------------------------------------------------
 -->
-<div class="first"><p>Survey Name and Description</p></div>
+<div class="first">
+    <div style="width:50%">
+        <p>Survey Name and Description</p></div>
+    </div>
+    <div style="width:50%; text-align: right">
+        <p><?php echo $_SESSION['user']; ?></p></div>
+</div>
 
 
 <!-- 
