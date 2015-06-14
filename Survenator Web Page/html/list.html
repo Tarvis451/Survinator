@@ -60,7 +60,7 @@ s.parentNode.insertBefore(ga, s);
 Header div.
 ----------------------------------------------------------------------------------------
 -->
-<div class="first"><p></p></div>
+<div class="first"><p style="text-align: right">Currently logged in as: <?php echo $_SESSION['user']; ?></p></div>
 
 
 <!-- 
@@ -70,7 +70,7 @@ This div is meant to display final form.
 -->
 
 <div>
-    <h2>Welcome to the Survinator, <?php echo $_SESSION['user']; ?>!</h2>
+    <h2>Welcome to the Survinator</h2>
     <!--First button never works for whatever reason-->
      <form id="blank">
         <input hidden="hidden" type="submit" value="" >

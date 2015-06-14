@@ -25,11 +25,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainOptions.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainOptions.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/MainOptions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.961538" vertical-offset="394" max-vertical-offset="1547">
-              <caret line="43" column="104" selection-start-line="43" selection-start-column="72" selection-end-line="43" selection-end-column="104" />
+            <state vertical-scroll-proportion="0.17026107" vertical-offset="496" max-vertical-offset="1547">
+              <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.038462" vertical-offset="844" max-vertical-offset="1751">
+              <caret line="65" column="5" selection-start-line="64" selection-start-column="0" selection-end-line="65" selection-end-column="5" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -40,7 +52,7 @@
       <file leaf-file-name="SurveyNameandDescription.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/SurveyNameandDescription.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.423077" vertical-offset="415" max-vertical-offset="1343">
+            <state vertical-scroll-proportion="-29.307692" vertical-offset="54" max-vertical-offset="1343">
               <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -59,10 +71,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="form.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/form.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14994487" vertical-offset="255" max-vertical-offset="4590">
+            <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="4590">
               <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
               <folding />
             </state>
@@ -77,6 +89,7 @@
         <option value="$PROJECT_DIR$/html/MainOptions.html" />
         <option value="$PROJECT_DIR$/html/SurveyNameandDescription.html" />
         <option value="$PROJECT_DIR$/html/form.css" />
+        <option value="$PROJECT_DIR$/html/list.html" />
       </list>
     </option>
   </component>
@@ -287,31 +300,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/list.html">
+    <entry file="file://$PROJECT_DIR$/html/form.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="33.46154" vertical-offset="870" max-vertical-offset="1751">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="4590">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/MainOptions.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.961538" vertical-offset="394" max-vertical-offset="1547">
-          <caret line="43" column="104" selection-start-line="43" selection-start-column="72" selection-end-line="43" selection-end-column="104" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/SurveyNameandDescription.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.423077" vertical-offset="415" max-vertical-offset="1343">
-          <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -323,11 +316,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/form.css">
+    <entry file="file://$PROJECT_DIR$/html/list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14994487" vertical-offset="255" max-vertical-offset="4590">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-          <folding />
+        <state vertical-scroll-proportion="-10.038462" vertical-offset="844" max-vertical-offset="1751">
+          <caret line="65" column="5" selection-start-line="64" selection-start-column="0" selection-end-line="65" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/SurveyNameandDescription.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-29.307692" vertical-offset="54" max-vertical-offset="1343">
+          <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/MainOptions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17026107" vertical-offset="496" max-vertical-offset="1547">
+          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
