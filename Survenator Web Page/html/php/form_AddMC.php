@@ -90,7 +90,7 @@
 		for ($i = 0; $i < $numresponses; $i++)
 		{ ?>
 			<div><input type="text" name="responses[]" value="<?php echo $responses[$i]; ?>">
-			<input style="width:10" type="submit" name="delete[<?php echo $i; ?>]" value="(-)"></div>
+			<input type="submit" name="delete[<?php echo $i; ?>]" value="(-)"></div>
 		<?php } 
 	
 	?>
