@@ -100,7 +100,7 @@ textarea{
 
 /*hoverpopups type 1*/
 
-#popup { color: #000; background-color: #c0c0c0; }
+#popup { color: #000; background-color: lightgray; }
 
 #popup a, #popup a:visited {
 	position: relative;
