@@ -47,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MultipleChoiceCreate.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MultipleChoiceCreate.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/MultipleChoiceCreate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.26923" vertical-offset="510" max-vertical-offset="1666">
-              <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.27014756" vertical-offset="0" max-vertical-offset="1598">
+              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -70,18 +70,18 @@
       <file leaf-file-name="form_AddMC.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/php/form_AddMC.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.153847" vertical-offset="867" max-vertical-offset="1836">
+            <state vertical-scroll-proportion="-22.76923" vertical-offset="955" max-vertical-offset="1836">
               <caret line="91" column="23" selection-start-line="91" selection-start-column="23" selection-end-line="91" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form_AddMC_aux.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="form_AddMC_aux.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/php/form_AddMC_aux.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2122588" vertical-offset="0" max-vertical-offset="881">
-              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+            <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="408">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="e#6#92#0#PHP" expanded="true" />
               </folding>
@@ -113,8 +113,8 @@
         <option value="$PROJECT_DIR$/MCcreate.css" />
         <option value="$PROJECT_DIR$/html/MCcreate.css" />
         <option value="$PROJECT_DIR$/html/php/form_AddMC.php" />
-        <option value="$PROJECT_DIR$/html/MultipleChoiceCreate.html" />
         <option value="$PROJECT_DIR$/html/php/form_AddMC_aux.php" />
+        <option value="$PROJECT_DIR$/html/MultipleChoiceCreate.html" />
       </list>
     </option>
   </component>
@@ -412,9 +412,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/html/php/form_AddMC_aux.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="408">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#92#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html/php/form_AddMC.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.153847" vertical-offset="867" max-vertical-offset="1836">
+        <state vertical-scroll-proportion="-22.76923" vertical-offset="955" max-vertical-offset="1836">
           <caret line="91" column="23" selection-start-line="91" selection-start-column="23" selection-end-line="91" selection-end-column="23" />
           <folding />
         </state>
@@ -422,19 +432,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/html/MultipleChoiceCreate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.26923" vertical-offset="510" max-vertical-offset="1666">
-          <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.27014756" vertical-offset="0" max-vertical-offset="1598">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/php/form_AddMC_aux.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2122588" vertical-offset="0" max-vertical-offset="881">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding>
-            <element signature="e#6#92#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
