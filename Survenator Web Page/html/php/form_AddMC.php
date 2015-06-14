@@ -89,7 +89,8 @@
  
 <center><font color='red'><?php echo $error; ?></font></center>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-	Question Text: <input type="text" name="text" value="<?php echo $fieldtext; ?>"><br>
+	Question Text: <br>
+	<input type="text" name="text" value="<?php echo $fieldtext; ?>"><br>
 	Responses:
 	<input type="hidden" name="numresponses" value="<?php echo $numresponses; ?>">
 <?php //dynamically add response boxes
