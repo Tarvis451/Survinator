@@ -1,3 +1,9 @@
+<style>
+	div{
+		width:
+	}
+</style>
+
 <?php
 	require_once 'addQuestion.php';
 	
@@ -83,20 +89,14 @@
  
 <center><font color='red'><?php echo $error; ?></font></center>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-	Question Text: <input type="text" name="text" value="<?php echo $fieldtext; ?>">
+	Question Text: <input type="text" name="text" value="<?php echo $fieldtext; ?>"><br>
 	Responses:
 	<input type="hidden" name="numresponses" value="<?php echo $numresponses; ?>">
-	<?php //dynamically add response boxes
-		for ($i = 0; $i < $numresponses; $i++)
-		{ ?>
+<?php //dynamically add response boxes
+for ($i = 0; $i < $numresponses; $i++)
+{ ?>
 			<div><input type="text" name="responses[]" value="<?php echo $responses[$i]; ?>">
 			<input type="submit" name="delete[<?php echo $i; ?>]" value="(-)"></div>
-		<?php } 
-	
-	?>
-	<input type="submit" name="addresponse" value="Add Response">
-	
-	<input type="submit" name="submit" value="Finish">
-	<input type="hidden" name="surveyid" value="<?php echo $surveyid; ?>">
-	<br><br><input type="submit" name="cancel" value="Cancel">
-</form>
+		<?php }
+
+?>
