@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,12 +63,16 @@ public class MultipleChoiceActivity extends ActionBarActivity {
 
     public void responseTitle(View v){
         Intent goToResponseTitle = new Intent(this, QuestionTitleActivity.class);
-        goToResponseTitle.putExtra("title_of_what","response");
-        startActivityForResult(goToResponseTitle,1);
+        goToResponseTitle.putExtra("title_of_what", "response");
+        startActivityForResult(goToResponseTitle, 1);
     }
 
     public void save(View v){
         EditText questionTitle = (EditText)findViewById(R.id.mcQuestionTitleText);
+        if(responseTitleList.size()<2){
+            Toast.makeText(getApplicationContext(),"You need at least two responses!",Toast.LENGTH_LONG).show();
+            return;
+        }
 
         Intent i = new Intent();
         i.putExtra("question_title",questionTitle.getText().toString());

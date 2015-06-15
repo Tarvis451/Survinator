@@ -22,7 +22,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +32,7 @@
         <activity
             android:name=".CreateSurvey"
             android:label="@string/title_create_survey"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity" android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.lappy.secondtry.MainActivity" />
@@ -40,7 +40,7 @@
         <activity
             android:name=".ViewSurvey"
             android:label="@string/title_view_survey"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity" android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.lappy.secondtry.MainActivity" />
@@ -54,7 +54,7 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
             android:parentActivityName=".MainActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden" >
+            android:windowSoftInputMode="adjustResize|stateHidden" android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="MainActivity" />
@@ -63,46 +63,50 @@
             android:name=".QuestionType"
             android:label="@string/title_activity_question_type"
             android:parentActivityName=".MainActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden" >
+            android:windowSoftInputMode="adjustResize|stateHidden" android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="MainActivity" />
         </activity>
         <activity
             android:name=".TrueFalseActivity"
-            android:label="@string/title_activity_true_false" >
+            android:label="@string/title_activity_true_false" android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".MultipleChoiceActivity"
-            android:label="@string/title_activity_multiple_choice" >
+            android:label="@string/title_activity_multiple_choice" android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".FreeResponseActivity"
-            android:label="@string/title_activity_free_response" >
+            android:label="@string/title_activity_free_response" android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".QuestionTitleActivity"
-            android:label="@string/title_activity_question_title" >
+            android:label="@string/title_activity_question_title" android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".LoginCustomActivity"
-            android:label="@string/title_activity_login_custom" >
+            android:label="@string/title_activity_login_custom" android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".MainMenuActivity"
-            android:label="@string/title_activity_main_menu" >
+            android:label="@string/title_activity_main_menu" android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".SurveyTitleActivity"
-            android:label="@string/title_activity_survey_title" >
+            android:label="@string/title_activity_survey_title" android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".ViewSurveyActivity"
-            android:label="@string/title_activity_view_survey" >
+            android:label="@string/title_activity_view_survey" android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".TakeSurveyActivity"
-            android:label="@string/title_activity_take_survey" >
+            android:label="@string/title_activity_take_survey" android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ViewResultsActivity"
+            android:label="@string/title_activity_view_results" android:screenOrientation="portrait">
         </activity>
     </application>
 

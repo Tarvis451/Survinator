@@ -11,11 +11,13 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -138,14 +140,27 @@ public class CreateSurvey extends ActionBarActivity
                 List<NameValuePair> nvp = new ArrayList<NameValuePair>();
                 nvp.add(new BasicNameValuePair("SurveyID",surveyid));
                 nvp.add(new BasicNameValuePair("QuestionTitle",questionList.get(i).getTitle()));
-                nvp.add(new BasicNameValuePair("QuestionType",questionList.get(i).getType()));
+                nvp.add(new BasicNameValuePair("QuestionType", questionList.get(i).getType()));
                 if(questionList.get(i).getType().equals("MC"))
                 {
-                    nvp.add(new BasicNameValuePair("r1",questionList.get(i).getMultipleChoiceText().get(0)));
-                    nvp.add(new BasicNameValuePair("r2",questionList.get(i).getMultipleChoiceText().get(1)));
-                    nvp.add(new BasicNameValuePair("r3",questionList.get(i).getMultipleChoiceText().get(2)));
-                    nvp.add(new BasicNameValuePair("r4",questionList.get(i).getMultipleChoiceText().get(3)));
+                    int numResponses = questionList.get(i).getMultipleChoiceText().size();
+                    nvp.add(new BasicNameValuePair("NumResponse",Integer.toString(numResponses)));
+
+                    for(int j=1;j<=numResponses;j++)
+                    {
+                        nvp.add(new BasicNameValuePair("r"+Integer.toString(j), questionList.get(i).getMultipleChoiceText().get(j-1)));
+                    }
+                    //nvp.add(new BasicNameValuePair("r1",questionList.get(i).getMultipleChoiceText().get(0)));
+                    //nvp.add(new BasicNameValuePair("r2",questionList.get(i).getMultipleChoiceText().get(1)));
+                    //nvp.add(new BasicNameValuePair("r3",questionList.get(i).getMultipleChoiceText().get(2)));
+                    //nvp.add(new BasicNameValuePair("r4",questionList.get(i).getMultipleChoiceText().get(3)));
                 }
+                else
+                {
+                    nvp.add(new BasicNameValuePair("NumResponse","0"));
+                }
+
+
 
                 try {
                     httpPost.setEntity(new UrlEncodedFormEntity(nvp));
@@ -153,8 +168,20 @@ public class CreateSurvey extends ActionBarActivity
                     e.printStackTrace();
                 }
 
+                System.err.println("test");
+
+                HttpResponse resp;
+
                 try {
-                    httpClient.execute(httpPost);
+                    resp = httpClient.execute(httpPost);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    return;
+                }
+
+                try {
+                    System.err.println("stuff");
+                    System.err.println(EntityUtils.toString(resp.getEntity()));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

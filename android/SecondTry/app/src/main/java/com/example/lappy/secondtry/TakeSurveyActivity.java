@@ -227,6 +227,42 @@ public class TakeSurveyActivity extends ActionBarActivity {
                 return;
             }
 
+            int numQuestions = responses.length();
+            final int arbitraryIDNumber = 172;
+
+            for(int j=0;j<numQuestions;j++)
+            {
+                Button tmpButton = new Button(getApplicationContext());
+                RelativeLayout.LayoutParams tmpParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+                if(j==0){
+                    tmpParams.addRule(RelativeLayout.BELOW, questionTitle.getId());
+                }
+                else
+                {
+                    tmpParams.addRule(RelativeLayout.BELOW, arbitraryIDNumber+j);
+                }
+                tmpButton.setGravity(Gravity.CENTER_HORIZONTAL);
+                try {
+                    tmpButton.setText(responses.getJSONObject(j).getString("ResponseText"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                tmpButton.setId(arbitraryIDNumber+j+1);
+                tmpButton.setLayoutParams(tmpParams);
+                rel.addView(tmpButton);
+                viewsToKill.add(tmpButton);
+                final int jj=j;
+                tmpButton.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        destroyViews(viewsToKill);
+                        responsesToSend.add(Integer.toString(jj+1));
+                        advance();
+                    }
+                });
+            }
+
+            /*
             //Draw a button
             Button aButton = new Button(getApplicationContext());
             RelativeLayout.LayoutParams ab = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
@@ -318,6 +354,7 @@ public class TakeSurveyActivity extends ActionBarActivity {
                     advance();
                 }
             });
+            */
         }
     }
 

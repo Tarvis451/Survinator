@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SecondTry</string>
+    <string name="app_name">Survenator</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -18,4 +18,5 @@
     <string name="enter_survey_title_text">Enter the name of your survey.</string>
     <string name="title_activity_view_survey">ViewSurveyActivity</string>
     <string name="title_activity_take_survey">TakeSurveyActivity</string>
+    <string name="title_activity_view_results">ViewResultsActivity</string>
 </resources>

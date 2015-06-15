@@ -30,7 +30,7 @@ public class SurveyTitleActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question_title);
+        setContentView(R.layout.activity_survey_title);
 
         TextView directions = (TextView)findViewById(R.id.directionsTextView);
         directions.setText(R.string.enter_survey_title_text);
@@ -103,6 +103,7 @@ public class SurveyTitleActivity extends ActionBarActivity {
         public void talkToServer() throws Exception {
             final EditText surveyTitleText = (EditText)findViewById(R.id.mcQuestionTitleText);
             final TextView errorBox  = (TextView)findViewById(R.id.questionTitleErrorTextview);
+            final EditText surveyDescText = (EditText)findViewById(R.id.surveyDescriptionEditText);
 
             errorBox.post(new Runnable(){
                 public void run(){
@@ -117,7 +118,7 @@ public class SurveyTitleActivity extends ActionBarActivity {
             //Build the data
             List<NameValuePair> nameValuePairList = new ArrayList<NameValuePair>();
             nameValuePairList.add(new BasicNameValuePair("title",surveyTitleText.getText().toString()));
-            nameValuePairList.add(new BasicNameValuePair("description", "The Android dev hasn't implented descriptions yet! Whoops."));
+            nameValuePairList.add(new BasicNameValuePair("description",surveyDescText.getText().toString()));
 
             //Post the data
             httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairList));
