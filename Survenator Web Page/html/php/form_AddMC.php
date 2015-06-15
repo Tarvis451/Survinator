@@ -95,7 +95,7 @@
     <br>
     <input type="hidden" name="surveyid" value="<?php echo $surveyid; ?>">
     <br><input type="submit" name="cancel" value="Cancel">
-    <br>
+    <br><br>
     <a><img  style="padding: 2px 0 0 0; width: 18px;" src="QuestionMark.png" alt="beetle"> 
     	<span>
     	Input the question in the top box.  The subsequent boxes are used for the responses
