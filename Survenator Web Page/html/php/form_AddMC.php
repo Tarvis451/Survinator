@@ -86,7 +86,7 @@
 		}
 	}
 ?>
- 
+ <br>
 <center><font color='red'><?php echo $error; ?></font></center>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 	Question Text: <br>
