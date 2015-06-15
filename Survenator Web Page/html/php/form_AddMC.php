@@ -95,6 +95,17 @@
     <br>
     <input type="hidden" name="surveyid" value="<?php echo $surveyid; ?>">
     <br><input type="submit" name="cancel" value="Cancel">
+    <br>
+    <a><img  style="padding: 2px 0 0 0; width: 18px;" src="QuestionMark.png" alt="beetle"> 
+    	<span>
+    	Input the question in the top box.  The subsequent boxes are used for the responses
+    	that you would like to have for the question.  If you would like to remove the question
+    	click on the button to the right of the response.  If you would like to add more responses
+    	click on the add responses button at the bottom of the responses.  Once you are satisfied 
+    	with the question click finish to submit the question.  If you do no want to add any more
+    	Multiple Choice questions click Cancel, which will bring you back to the question type page.
+    	</span>
+    </a>
 </div>
 
 <div class="three">
