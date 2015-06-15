@@ -5,6 +5,10 @@
  * Date: 6/13/2015
  * Time: 9:39 PM
  */
+ 
+ 	//Get the Survey ID
+	$surveyid = $_GET['surveyid'];
+ 
 ?>
 
 <form action="<?php echo $_SERVER['form_AddMC.php']; ?>" method="post">
