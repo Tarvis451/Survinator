@@ -92,6 +92,7 @@
    
 <div class="two" id="popup" ><br><br>
     <br><input type="submit" name="submit" value="Finish">
+    <br>
     <input type="hidden" name="surveyid" value="<?php echo $surveyid; ?>">
     <br><input type="submit" name="cancel" value="Cancel">
 </div>
