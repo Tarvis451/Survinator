@@ -101,3 +101,9 @@ for ($i = 0; $i < $numresponses; $i++)
 		<?php }
 
 ?>
+
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+
+    <br><input type="submit" name="addresponse" value="Add Response"><br>
+
+</form>
