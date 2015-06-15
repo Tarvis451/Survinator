@@ -8,8 +8,7 @@
 ?>
 
 <form action="<?php echo $_SERVER['form_AddMC.php']; ?>" method="post">
-
-    <br><input type="submit" name="addresponse" value="Add Response">
+    
     <br><input type="submit" name="submit" value="Finish">
     <input type="hidden" name="surveyid" value="<?php echo $surveyid; ?>">
     <br><input type="submit" name="cancel" value="Cancel">
