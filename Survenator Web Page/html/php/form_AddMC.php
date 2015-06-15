@@ -86,9 +86,18 @@
 		}
 	}
 ?>
- <br>
-<center><font color='red'><?php echo $error; ?></font></center>
+
+
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+   
+<div class="two" id="popup" ><br><br>
+    <br><input type="submit" name="submit" value="Finish">
+    <input type="hidden" name="surveyid" value="<?php echo $surveyid; ?>">
+    <br><input type="submit" name="cancel" value="Cancel">
+</div>
+
+<div class="three">
+<center><font color='red'><?php echo $error; ?></font></center>
 	Question Text: <br>
 	<input type="text" name="text" value="<?php echo $fieldtext; ?>"><br>
 	Responses:
@@ -102,8 +111,7 @@ for ($i = 0; $i < $numresponses; $i++)
 
 ?>
 
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-
     <br><input type="submit" name="addresponse" value="Add Response"><br>
 
 </form>
+</div>
