@@ -110,7 +110,7 @@
 
 <div class="three">
 <center><font color='red'><?php echo $error; ?></font></center>
-	Question Text: <br>
+	<br>Question Text: <br>
 	<input type="text" name="text" value="<?php echo $fieldtext; ?>"><br>
 	Responses:
 	<input type="hidden" name="numresponses" value="<?php echo $numresponses; ?>">
