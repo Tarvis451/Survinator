@@ -45,7 +45,7 @@
  
 <center><font color='red'><?php echo $error; ?></font></center>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-	Survey Title: <input type="text" name="title" value="<?php echo $fieldname; ?>">
+	Survey Title: <input type="text" name="title" value="<?php echo $fieldname; ?>"><br>
 	Survey Description: <textarea name="description" rows="5" cols="40"><?php echo $fielddesc; ?></textarea>
 	<input type="submit" name="submit" value="Add Questions">
 	<br><br><input type="submit" name="cancel" value="Cancel">
