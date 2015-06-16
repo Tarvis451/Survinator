@@ -43,4 +43,3 @@ if(isset($_POST['submit']))
     Password: <input type="password" name="password" value="">
     <input type="submit" name="submit" value="Register">
 </form>
-<center><br>NOTICE: Passwords are currently NOT hashed! Do not register with a password you use a lot!<br></center>
