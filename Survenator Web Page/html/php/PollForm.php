@@ -54,12 +54,9 @@ if (isset($_POST['submit']))
 		foreach ($responses as $questionid => $response)
 			$res = submitResponse($surveyid, $questionid, $response);
 			
-		echo "User submitted survey";
+		//echo "User submitted survey";
 		
-		?>
-		<br><br><br>
-		<a href="MainOptions.html" >Go to Main Menu</a>
-		<?php
+		header("Location: /TakePollSuccess.html");
 		
 		die();
 		
@@ -72,7 +69,7 @@ if ($questionlist != 0)
 
 ?>
 <br><br>
-<table style="width:100%; text-align:center" >
+<table style="width:100%; text-align:left" >
 	<tr>
 		<th>Question #</th>
 		<th>Question</th>
