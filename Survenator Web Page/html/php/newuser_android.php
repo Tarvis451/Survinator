@@ -23,8 +23,11 @@ if ($res == 82))
 	die();
 }
 
-$response["error"]=1;
-$response["message"]="You are registered!";
-echo json_encode($response);
-die();
+if ($res == 0))
+{
+	$response["error"]=1;
+	$response["message"]="You are registered!";
+	echo json_encode($response);
+	die();
+}
 ?>
