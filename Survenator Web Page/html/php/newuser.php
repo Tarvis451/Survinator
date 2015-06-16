@@ -31,8 +31,8 @@ function register_user($inuser, $inpass)
 	}
 	
 	//make new user
-	//TODO - get hashed password instead of plaintext
-	$sqlquery = "INSERT INTO Users(UserName, HashPassword) VALUES ('{$user}', '{$pass}')";
+	$hashpass = password_hash($pass, PASSWORD_BCRYPT);
+	$sqlquery = "INSERT INTO Users(UserName, HashPassword) VALUES ('{$user}', '{$hashpass}')";
 	$result = mysql_query($sqlquery);
 	
 	//redirect to registration success page
