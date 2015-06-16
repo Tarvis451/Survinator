@@ -28,7 +28,7 @@ function login($inuser, $inpass)
 	{
 		if ($pass == $hashpass) //rehash it if so
 		{
-			$hashpass = hash_password($pass, PASSWORD_BCRYPT);
+			$hashpass = password_hash($pass, PASSWORD_BCRYPT);
 			$query = "UPDATE Users SET HashPassword='{$hashpass}' WHERE UserName='{$user}'";
 			$result = mysql_query($sqlquery);
 		}
