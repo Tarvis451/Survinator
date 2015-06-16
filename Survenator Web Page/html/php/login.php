@@ -9,7 +9,7 @@ function login($inuser, $inpass)
 	$pass = mysql_real_escape_string($inpass);
 	
 	//query user
-	$sqlquery = "SELECT UserName FROM Users where UserName='{$user}'";
+	$sqlquery = "SELECT UserID, HashPassword FROM Users WHERE UserName='{$user}'";
 	$result = mysql_query($sqlquery);
 	
 	//fail if user does not exist
@@ -20,20 +20,7 @@ function login($inuser, $inpass)
 	}
 	
 	//query password
-	//TODO - use hashed password instead of plaintext
-	$sqlquery = "SELECT UserID AND HashPassword FROM Users WHERE UserName='{$user}'";
-	$result = mysql_query($sqlquery); // This is guaranteed to return ONLY the UserID. That is, if a user logs in successfully,
-					// The entire result set will be {<value of UserID>} (assuming they are a valid user).
-	
-	//fail if user doesn't exist
-	if(mysql_num_rows($result) == 0)
-	{
-		mysql_close($dbhandle);
-		return 92;
-	}
-	
 	$row = mysql_fetch_array($result);
-	
 	$hashpass = $row['HashPassword'];
 	
 	//fail if password does not match
