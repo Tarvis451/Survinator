@@ -30,7 +30,7 @@ function login($inuser, $inpass)
 		{
 			$hashpass = password_hash($pass, PASSWORD_BCRYPT);
 			$query = "UPDATE Users SET HashPassword='{$hashpass}' WHERE UserName='{$user}'";
-			$result = mysql_query($sqlquery);
+			$result = mysql_query($query);
 		}
 	}
 	
