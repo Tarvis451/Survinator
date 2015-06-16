@@ -7,7 +7,7 @@ $pass = $_POST['password'];
 
 $res = register_user($user, $pass);
 
-if ($res == 81))
+if ($res == 81)
 {
 	$response["error"]=81;
 	$response["message"]="Username and password must be at least 3 characters long!";
@@ -15,7 +15,7 @@ if ($res == 81))
 	die();
 }
 
-if ($res == 82))
+if ($res == 82)
 {
 	$response["error"]=82;
 	$response["message"]="User already exists!";
@@ -23,7 +23,7 @@ if ($res == 82))
 	die();
 }
 
-if ($res == 0))
+if ($res == 0)
 {
 	$response["error"]=1;
 	$response["message"]="You are registered!";
