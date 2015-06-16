@@ -2,50 +2,56 @@
 
 function login($inuser, $inpass)
 {
-    require 'dbconnect.php';
-    $dbhandle = db_connect();
-    
-    $user = mysql_real_escape_string($inuser);
+	require 'dbconnect.php';
+	$dbhandle = db_connect();
+	
+	$user = mysql_real_escape_string($inuser);
 	$pass = mysql_real_escape_string($inpass);
-    
-    //query user
-    $sqlquery = "SELECT UserName FROM Users where UserName='{$user}'";
-    $result = mysql_query($sqlquery);
-    
-    //fail if user does not exist
-    if(mysql_num_rows($result) == 0)
-    {
-	    mysql_close($dbhandle);
-	    return 91;
-    }
-    
-    //query password
-    //TODO - use hashed password instead of plaintext
-    $sqlquery = "SELECT UserID FROM Users WHERE UserName='{$user}' AND HashPassword='{$pass}'";
-    $result = mysql_query($sqlquery); // This is guaranteed to return ONLY the UserID. That is, if a user logs in successfully,
-    					// The entire result set will be {<value of UserID>} (assuming they are a valid user).
-    
-    //fail if wrong password
-    if(mysql_num_rows($result) == 0)
-    {
-	    mysql_close($dbhandle);
-	    return 92;
-    }
-    
-    $row = mysql_fetch_array($result);
+	
+	//query user
+	$sqlquery = "SELECT UserName FROM Users where UserName='{$user}'";
+	$result = mysql_query($sqlquery);
+	
+	//fail if user does not exist
+	if(mysql_num_rows($result) == 0)
+	{
+		mysql_close($dbhandle);
+		return 91;
+	}
+	
+	//query password
+	//TODO - use hashed password instead of plaintext
+	$sqlquery = "SELECT UserID AND HashPassword FROM Users WHERE UserName='{$user}'";
+	$result = mysql_query($sqlquery); // This is guaranteed to return ONLY the UserID. That is, if a user logs in successfully,
+					// The entire result set will be {<value of UserID>} (assuming they are a valid user).
+	
+	//fail if user doesn't exist
+	if(mysql_num_rows($result) == 0)
+	{
+		mysql_close($dbhandle);
+		return 92;
+	}
+	
+	$row = mysql_fetch_array($result);
+	
+	$hashpass = $row['HashPassword'];
+	
+	//fail if password does not match
+	if (!password_verify($pass, $hashpass))
+		return 92;
 
-    //Grab the UserID for the redirect link
-    $userid = $row['UserID'];
+	//Grab the UserID for the redirect link
+	$userid = $row['UserID'];
 
-    //create login session
-    session_start();
-    $_SESSION["userid"] = $userid;
-    $_SESSION["user"] = $user;
-    
-    db_close($dbhandle);
+	//create login session
+	session_start();
+	$_SESSION["userid"] = $userid;
+	$_SESSION["user"] = $user;
+	
+	db_close($dbhandle);
 
 	//return 0 indicates succes
-    return 0;
+	return 0;
 }
 
 //Checks if a user is logged in
