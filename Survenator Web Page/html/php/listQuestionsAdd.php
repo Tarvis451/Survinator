@@ -19,8 +19,8 @@ if ($questionlist != 0)
 foreach ($questionlist as $question)
 {
 	echo "<tr><td>{$question['QuestionID']}</td>";
-	//echo "<td><a href = '/editQuestion.html?surveyid={$surveyid}&questionid={$question['QuestionID']}'>{$question['QuestionText']}</a></td>";
-	echo $question['QuestionText'];
+	//echo ""<td><a href = '/editQuestion.html?surveyid={$surveyid}&questionid={$question['QuestionID']}'>{$question['QuestionText']}</a></td>";
+	echo "<td>$question['QuestionText']</td>";
 	if ($question['QuestionType'] == "TF")
 		echo "<td>True/False</td>";
 	if ($question['QuestionType'] == "MC")
