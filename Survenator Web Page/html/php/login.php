@@ -23,6 +23,17 @@ function login($inuser, $inpass)
 	$row = mysql_fetch_array($result);
 	$hashpass = $row['HashPassword'];
 	
+	//check if using old unhashed pass
+	if (password_needs_rehash($pass, PASSWORD_BCRYPT))
+	{
+		if ($pass == $hashpass) //rehash it if so
+		{
+			$hashpass = hash_password($pass, PASSWORD_BCRYPT);
+			$query = "UPDATE Users SET HashPassword='{$hashpass}' WHERE UserName='{$user}'";
+			$result = mysql_query($sqlquery);
+		}
+	}
+	
 	//fail if password does not match
 	if (!password_verify($pass, $hashpass))
 		return 92;
